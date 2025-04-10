@@ -1,24 +1,25 @@
 # MyProject
 
-Wielonarzędziowy projekt tworzony z użyciem:
+the project is created using, among others,:
 - Visual Studio (WPF)
-- Fusion360 (modele 3D)
-- Innych narzędzi wspomagających rozwój projektu
+- Fusion360 (3D model)
+- STM32CubeIDE (C)
+- Raspberry Pi (Python)
 
-## 📁 Struktura
+## 📁 Structure
 ```
 MyProject/
-├── App/          # Aplikacja WPF
-├── Models/       # Modele 3D
-├── Docs/         # Dokumentacja
-├── Resources/    # Grafiki i zasoby
+├── 3D_Model/          # 3D model of stand
+├── Docs/              # Documentation - software - ideas - plans
+├── Raspberry Pi/      # Raspberry Pi Files
+├── STM32/             # STM32CubeIDE
 ├── LICENSE
 └── README.md
 ```
 
-## 📄 Licencja
+## 📄 License
 
-Projekt udostępniany na licencji **Apache License 2.0**.  
-Zobacz pełny tekst licencji w pliku [LICENSE](./LICENSE).
+Project shared with license **Apache License 2.0**.  
+full license text inside this file [LICENSE](./LICENSE).
 
 © 2025 bezlo
