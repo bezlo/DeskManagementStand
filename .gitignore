@@ -1,0 +1,56 @@
+# === Visual Studio (WPF / .NET) ===
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Bb]in/
+[Oo]bj/
+*.dll
+*.exe
+
+## VS Code
+.vscode/
+
+## NuGet packages
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+## Backup & temp
+*~
+*.bak
+*.tmp
+*.log
+
+# === Fusion 360 ===
+
+# Local backups & autosaves
+*.f3d1
+*.autosave
+*.backup
+~$*
+
+# Exported files
+*.step
+*.stp
+*.iges
+*.igs
+*.sat
+*.f3z
+*.smf
+
+# Fusion folders
+__MACOSX/
+._*
+
+# === General ===
+
+.DS_Store
+Thumbs.db
+desktop.ini
