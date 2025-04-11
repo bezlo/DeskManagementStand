@@ -11,9 +11,6 @@ using System.Windows.Shapes;
 
 namespace DeskManagementStand_App
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -21,9 +18,6 @@ namespace DeskManagementStand_App
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+     
     }
 }
