@@ -9,7 +9,7 @@
     <UserControl.Resources>
         <Storyboard x:Key="BlinkAnimation" RepeatBehavior="Forever" AutoReverse="True">
             <ColorAnimation
-                Storyboard.TargetName="borderBackground"
+                Storyboard.TargetName="borderBackground1"
                 Storyboard.TargetProperty="(SolidColorBrush.Color)"
                 From="Red" To="Transparent" Duration="0:0:1"/>
         </Storyboard>

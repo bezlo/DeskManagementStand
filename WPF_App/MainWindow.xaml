@@ -32,6 +32,10 @@
             <userControls:ColorSelection/>
         </Grid>
 
+        <Grid Grid.Row="2">
+            <userControls:ChargingModule/>
+        </Grid>
+
 
 
 
