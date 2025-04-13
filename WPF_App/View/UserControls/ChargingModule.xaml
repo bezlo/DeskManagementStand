@@ -7,12 +7,46 @@
              mc:Ignorable="d" 
              d:DesignHeight="80" d:DesignWidth="800">
     <UserControl.Resources>
-        <Storyboard x:Key="BlinkAnimation" RepeatBehavior="Forever" AutoReverse="True">
-            <ColorAnimation
-                Storyboard.TargetName="borderBackground1"
-                Storyboard.TargetProperty="(SolidColorBrush.Color)"
-                From="Red" To="Transparent" Duration="0:0:1"/>
+        <Storyboard x:Key="BlinkAnimation" RepeatBehavior="Forever">
+
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="borderBackground1"
+                                  Storyboard.TargetProperty="(SolidColorBrush.Color)">
+                <LinearColorKeyFrame  KeyTime="0:0:0" Value="Transparent"/>
+                <LinearColorKeyFrame  KeyTime="0:0:1" Value="#CCFF0000"/>
+            </ColorAnimationUsingKeyFrames>
+
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="borderBackground2"
+                                  Storyboard.TargetProperty="(SolidColorBrush.Color)">
+                <LinearColorKeyFrame  KeyTime="0:0:1" Value="Transparent"/>
+                <LinearColorKeyFrame  KeyTime="0:0:2" Value="#80FF0000"/>
+            </ColorAnimationUsingKeyFrames>
+
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="borderBackground3"
+                                  Storyboard.TargetProperty="(SolidColorBrush.Color)">
+                <LinearColorKeyFrame  KeyTime="0:0:2" Value="Transparent"/>
+                <LinearColorKeyFrame  KeyTime="0:0:3" Value="#33FF0000"/>
+            </ColorAnimationUsingKeyFrames>
+
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="borderBackground4"
+                                  Storyboard.TargetProperty="(SolidColorBrush.Color)">
+                <LinearColorKeyFrame  KeyTime="0:0:3" Value="Transparent"/>
+                <LinearColorKeyFrame  KeyTime="0:0:4" Value="#33008000"/>
+            </ColorAnimationUsingKeyFrames>
+
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="borderBackground5"
+                                  Storyboard.TargetProperty="(SolidColorBrush.Color)">
+                <LinearColorKeyFrame  KeyTime="0:0:4" Value="Transparent"/>
+                <LinearColorKeyFrame  KeyTime="0:0:5" Value="#80008000"/>
+            </ColorAnimationUsingKeyFrames>
+
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="borderBackground6"
+                                  Storyboard.TargetProperty="(SolidColorBrush.Color)">
+                <LinearColorKeyFrame  KeyTime="0:0:5" Value="Transparent"/>
+                <LinearColorKeyFrame  KeyTime="0:0:6" Value="#CC008000"/>
+            </ColorAnimationUsingKeyFrames>
+
         </Storyboard>
+
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -22,42 +56,43 @@
 
         <Grid Grid.Column="0">
             <Button Content="Start Animation" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Button_Click" Background="AntiqueWhite"/>
+            
             <!-- Obudowa baterii -->
             <Rectangle Width="150" Height="80" Stroke="Black" StrokeThickness="10" RadiusX="5" RadiusY="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             <!-- Styki baterii -->
-            <Rectangle Width="16" Height="36" Fill="Black" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="275,0,0,0"/>
+            <Rectangle Width="16" Height="36" Fill="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="165,0,0,0"/>
 
             <!-- Wypełnienie (paski) -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Border x:Name="border1" BorderBrush="Black" BorderThickness="2" Width="15" Height="60" Margin="3">
                     <Border.Background>
-                        <SolidColorBrush x:Name="borderBackground1" Color="#FF0000" Opacity="0.8"/>
+                        <SolidColorBrush x:Name="borderBackground1" Color="Transparent"/>
                     </Border.Background>
                 </Border>
                 <Border x:Name="border2" BorderBrush="Black" BorderThickness="2" Width="15" Height="60" Margin="3">
                     <Border.Background>
-                        <SolidColorBrush x:Name="borderBackground2" Color="#FF0000" Opacity="0.5"/>
+                        <SolidColorBrush x:Name="borderBackground2" Color="Transparent"/>
                     </Border.Background>
                 </Border>
                 <Border x:Name="border3" BorderBrush="Black" BorderThickness="2" Width="15" Height="60" Margin="3">
                     <Border.Background>
-                        <SolidColorBrush x:Name="borderBackground3" Color="#FF0000" Opacity="0.2"/>
+                        <SolidColorBrush x:Name="borderBackground3" Color="Transparent"/>
                     </Border.Background>
                 </Border>
                 <Border x:Name="border4" BorderBrush="Black" BorderThickness="2" Width="15" Height="60" Margin="3">
                     <Border.Background>
-                        <SolidColorBrush x:Name="borderBackground4" Color="Green" Opacity="0.2"/>
+                        <SolidColorBrush x:Name="borderBackground4" Color="Transparent"/>
                     </Border.Background>
                 </Border>
                 <Border x:Name="border5" BorderBrush="Black" BorderThickness="2" Width="15" Height="60" Margin="3">
                     <Border.Background>
-                        <SolidColorBrush x:Name="borderBackground5" Color="Green" Opacity="0.5"/>
+                        <SolidColorBrush x:Name="borderBackground5" Color="Transparent"/>
                     </Border.Background>
                 </Border>
                 <Border x:Name="border6" BorderBrush="Black" BorderThickness="2" Width="15" Height="60" Margin="3">
                     <Border.Background>
-                        <SolidColorBrush x:Name="borderBackground6" Color="Green" Opacity="0.8"/>
+                        <SolidColorBrush x:Name="borderBackground6" Color="Transparent"/>
                     </Border.Background>
                 </Border>
             </StackPanel>

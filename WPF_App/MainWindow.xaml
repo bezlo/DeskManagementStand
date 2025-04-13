@@ -36,6 +36,17 @@
             <userControls:ChargingModule/>
         </Grid>
 
+        <Grid Grid.Row="3">
+            <userControls:ChargingModule/>
+        </Grid>
+        
+        <Grid Grid.Row="4">
+            <userControls:ChargingModule/>
+        </Grid>
+        
+        <Grid Grid.Row="5">
+            <userControls:ChargingModule/>
+        </Grid>
 
 
 
