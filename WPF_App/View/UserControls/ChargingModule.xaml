@@ -108,10 +108,16 @@
                 <TextBlock Text="Charging Device" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <TextBlock Text="Headphones" FontSize="14" FontWeight="Bold" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Active" FontSize="14" FontWeight="Bold" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Border CornerRadius="10" Background="Green" Padding="6,2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0">
+                        <Border.Effect>
+                            <DropShadowEffect Color="LimeGreen" BlurRadius="10" ShadowDepth="0" Opacity="0.8"/>
+                        </Border.Effect>
+                        <TextBlock Text="Active" FontSize="14" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
                     <TextBlock Text="charging" FontSize="14" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 </StackPanel>
             </StackPanel>
+            
             <Expander Header="More details" Margin="130,0,0,0" ExpandDirection="Right">
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Vertical" Margin="10">
