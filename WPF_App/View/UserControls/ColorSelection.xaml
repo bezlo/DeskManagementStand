@@ -89,12 +89,12 @@
                     Canvas.Left="135" Canvas.Top="18" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Rectangle Width="15" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Panel.ZIndex="-1"
                     Canvas.Left="135" Canvas.Top="26" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="18" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="26" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="170"/>
-                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="18" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="170"/>
-                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="26" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="170"/>
+                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center" Panel.ZIndex="-1"/>
+                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="18" HorizontalAlignment="Center" VerticalAlignment="Top" Panel.ZIndex="-1"/>
+                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="26" HorizontalAlignment="Center" VerticalAlignment="Top" Panel.ZIndex="-1"/>
+                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="170" Panel.ZIndex="-1"/>
+                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="18" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="170" Panel.ZIndex="-1"/>
+                <Rectangle Width="10" Height="4" Fill="#B87333" RadiusX="2" RadiusY="2" Canvas.Top="26" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="170" Panel.ZIndex="-1"/>
             </Canvas>
 
         </Grid>

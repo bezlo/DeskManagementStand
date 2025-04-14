@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DeskManagementStand_App.View.UserControls"
              mc:Ignorable="d" 
-             d:DesignHeight="80" d:DesignWidth="800">
+             d:DesignHeight="80" d:DesignWidth="1000">
     <UserControl.Resources>
         <Storyboard x:Key="BlinkAnimation" RepeatBehavior="Forever">
 
@@ -50,13 +50,13 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="6*"/>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
             <Button Content="Start Animation" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Button_Click" Background="AntiqueWhite"/>
-            
+
             <!-- Obudowa baterii -->
             <Rectangle Width="150" Height="80" Stroke="Black" StrokeThickness="10" RadiusX="5" RadiusY="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
@@ -100,8 +100,62 @@
             <!-- Błyskawica -->
             <Path Fill="#0D52BD" Stretch="Uniform" StrokeThickness="1" Data="M 80,30 L 60,60 L 70,60 L 50,90 L 90,50 L 80,50 Z" 
               Width="40" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            
+
         </Grid>
+
+        <Grid Grid.Column="1">
+            <StackPanel>
+                <TextBlock Text="Charging Device" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock Text="Headphones" FontSize="14" FontWeight="Bold" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Active" FontSize="14" FontWeight="Bold" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBlock Text="charging" FontSize="14" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                </StackPanel>
+            </StackPanel>
+            <Expander Header="More details" Margin="130,0,0,0" ExpandDirection="Right">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <TextBlock Text="Charging voltage" FontSize="14" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Value:" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text="Value" FontSize="14" FontWeight="Bold" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text="[V]" FontSize="14" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <TextBlock Text="Charging Current" FontSize="14" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Value:" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text="Value" FontSize="14" FontWeight="Bold" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text="[A]" FontSize="14" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <TextBlock Text="Charging power" FontSize="14" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Value:" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text="Value" FontSize="14" FontWeight="Bold" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text="[W]" FontSize="14" FontWeight="Bold" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" Margin="10">
+                        <TextBlock Text="Charging time" FontSize="14" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="00" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text=" h " FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text="00" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text=" min " FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text="00" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <TextBlock Text=" s " FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Expander>
+        </Grid>
+
 
     </Grid>
 </UserControl>
