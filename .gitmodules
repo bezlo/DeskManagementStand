@@ -1,0 +1,3 @@
+[submodule "Raspberry Pi/RaspberryPi_Scripts"]
+	path = Raspberry Pi/RaspberryPi_Scripts
+	url = https://github.com/bezlo/RaspberryPi_Scripts.git
