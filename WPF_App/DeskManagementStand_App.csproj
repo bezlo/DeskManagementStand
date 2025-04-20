@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+	  <TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
+	  <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
@@ -11,6 +11,10 @@
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Styles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IO.Ports" Version="9.0.4" />
   </ItemGroup>
 
 </Project>
