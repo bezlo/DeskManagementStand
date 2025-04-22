@@ -1,17 +1,20 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
 using DeskManagementStand_App.MVVM;
 
 namespace DeskManagementStand_App.ViewModel
 {
-    class MainWindowViewModel
+    public class MainWindowViewModel 
     {
-        
-            public ICommand CloseAppCommand { get; }
+        public ColorSelectorViewModel ColorSelectorViewModel { get; set; }
+
+        public ICommand CloseAppCommand { get; }
 
             public MainWindowViewModel()
             {
-                CloseAppCommand = new RelayCommand(_ => CloseApp());
+                 ColorSelectorViewModel = new ColorSelectorViewModel();
+                 CloseAppCommand = new RelayCommand(_ => CloseApp());
             }
 
             private void CloseApp()

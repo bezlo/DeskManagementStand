@@ -1,5 +1,6 @@
 ﻿// ===== File: ColorSelectorViewModel.cs =====
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Windows.Media;
 
@@ -10,9 +11,9 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
     {
         get => _selectedColor;
         set
-        { 
-            _selectedColor = value; 
-            OnPropertyChanged(); 
+        {
+            _selectedColor = value;
+            OnPropertyChanged();
         }
     }
 
@@ -41,5 +42,10 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
 
     public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged([CallerMemberName] string name = null)
-        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+    {
+        Debug.WriteLine($"Property changed: {name}");
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));    
+    } 
+    
+
 }
