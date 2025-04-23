@@ -1,14 +1,11 @@
 ﻿using System.Diagnostics;
 using System.IO;
-using System.Net.Http;
 using System.Net.Sockets;
 using System.Text;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
 using DeskManagementStand_App.ViewModel;
-using Windows.Web.Http;
 
 
 namespace DeskManagementStand_App
