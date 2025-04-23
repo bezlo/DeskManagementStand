@@ -7,6 +7,8 @@ using System.Windows.Media;
 public class ColorSelectorViewModel : INotifyPropertyChanged
 {
     private SolidColorBrush _selectedColor = new SolidColorBrush(Colors.Magenta);
+    public Color SelectedColorValue => _selectedColor.Color;
+
     public SolidColorBrush SelectedColor
     {
         get => _selectedColor;
@@ -14,9 +16,10 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
         {
             _selectedColor = value;
             OnPropertyChanged();
+            OnPropertyChanged(nameof(SelectedColorValue));
         }
     }
-
+    
     public void SetColorFromAngle(double angleDegrees)
     {
         var color = HsvToRgb(angleDegrees, 1, 1);

@@ -15,7 +15,7 @@
                 <MenuItem Header="Exit" Command="{Binding CloseAppCommand}"/>
             </MenuItem>
             <MenuItem Header="Info">
-                <MenuItem Header="Connection info"/>
+            <MenuItem Header="Connection info" Command="{Binding OpenConnectionSettingsCommand}"/>
                 <MenuItem Header="About"/>
             </MenuItem>
             <MenuItem Header="Help">

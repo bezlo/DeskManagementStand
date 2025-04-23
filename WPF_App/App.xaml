@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:DeskManagementStand_App"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Styles/DangerButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/NormalButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

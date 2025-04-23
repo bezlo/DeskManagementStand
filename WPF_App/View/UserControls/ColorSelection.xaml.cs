@@ -12,8 +12,8 @@ namespace DeskManagementStand_App.View.UserControls
         public ColorSelection()
         {
             InitializeComponent();
-            DataContext = new ColorSelectorViewModel();
-            DrawColorRing();
+            //DataContext = new ColorSelectorViewModel();
+            Loaded += (s, e) => DrawColorRing(); // poczekaj na załadowanie, by mieć dostęp do ViewModel
         }
 
         private void DrawColorRing()

@@ -30,7 +30,7 @@ namespace DeskManagementStand_App
         {
             _timer = new DispatcherTimer
             {
-                Interval = TimeSpan.FromSeconds(5)
+                Interval = TimeSpan.FromSeconds(1)
             };
             _timer.Tick += Timer_Tick;
             _timer.Start();
@@ -76,13 +76,17 @@ namespace DeskManagementStand_App
         private async void Timer_Tick(object sender, EventArgs e)
         {
             Debug.WriteLine("Tick"); // Sprawdź, czy tick w ogóle się wykonuje
-            var viewModel = DataContext as MainWindowViewModel; // Odpowiedni typ tutaj
+
+            var viewModel = DataContext as MainWindowViewModel;
             if (viewModel?.ColorSelectorViewModel == null)
                 return;
 
+            Debug.WriteLine(DataContext?.GetType().Name);
+
+            var colorVal = viewModel.ColorSelectorViewModel.SelectedColorValue;
+
             var color = viewModel.ColorSelectorViewModel.SelectedColor.Color;
                     
-
             if (oldColor != color)
             {
                 oldColor = color;
@@ -96,26 +100,7 @@ namespace DeskManagementStand_App
 
 
         }
-            //var viewModel = DataContext as ColorSelectorViewModel;
-            //if (viewModel != null)
-            //{
-            //    var color = viewModel.SelectedColor.Color;
-            //    string colorString = $"{color.R},{color.G},{color.B}";
-            //    _tcpHandler.SendAsync(colorString);
-            //}
-       //}
-
-        //private void SendRGB_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        //{
-        //    var viewModel = DataContext as ColorSelectorViewModel;
-        //
-        //    SolidColorBrush brush = viewModel.SelectedColor;
-        //    Color color = brush.Color;
-        //
-        //    // Przygotuj dane do wysłania
-        //    string colorString = $"{color.R},{color.G},{color.B}";
-        //    _tcpHandler.SendAsync(colorString);
-        //}
+       
     }
 
     public class TcpClientHandler
