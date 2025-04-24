@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\services\\colorsynchronizationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:services\\colorsynchronizationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\helpers\\tcp_clienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:helpers\\tcp_clienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\viewmodel\\connectioninfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:viewmodel\\connectioninfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\viewmodel\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:viewmodel\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\view\\usercontrols\\connectioninfo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\connectioninfo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\view\\usercontrols\\connectioninfo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\connectioninfo.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\deskmanagementstand_app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:deskmanagementstand_app.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\viewmodel\\colorselectorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +58,99 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "ColorSynchronizationService.cs",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\ColorSynchronizationService.cs",
+              "RelativeDocumentMoniker": "Services\\ColorSynchronizationService.cs",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\ColorSynchronizationService.cs",
+              "RelativeToolTip": "Services\\ColorSynchronizationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T12:49:07.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DeskManagementStand_App",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\DeskManagementStand_App.csproj",
+              "RelativeDocumentMoniker": "DeskManagementStand_App.csproj",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\DeskManagementStand_App.csproj",
+              "RelativeToolTip": "DeskManagementStand_App.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-24T12:47:36.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ConnectionInfo.xaml.cs",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\View\\UserControls\\ConnectionInfo.xaml.cs",
+              "RelativeDocumentMoniker": "View\\UserControls\\ConnectionInfo.xaml.cs",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\View\\UserControls\\ConnectionInfo.xaml.cs",
+              "RelativeToolTip": "View\\UserControls\\ConnectionInfo.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T12:44:10.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ConnectionInfo.xaml",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\View\\UserControls\\ConnectionInfo.xaml",
+              "RelativeDocumentMoniker": "View\\UserControls\\ConnectionInfo.xaml",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\View\\UserControls\\ConnectionInfo.xaml",
+              "RelativeToolTip": "View\\UserControls\\ConnectionInfo.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-24T12:44:08.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-24T12:43:39.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "App.xaml",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-24T12:43:34.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TCP_ClientHandler.cs",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Helpers\\TCP_ClientHandler.cs",
+              "RelativeDocumentMoniker": "Helpers\\TCP_ClientHandler.cs",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Helpers\\TCP_ClientHandler.cs",
+              "RelativeToolTip": "Helpers\\TCP_ClientHandler.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T12:41:18.459Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ColorSelection.xaml.cs",
               "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\View\\UserControls\\ColorSelection.xaml.cs",
               "RelativeDocumentMoniker": "View\\UserControls\\ColorSelection.xaml.cs",
@@ -38,12 +158,11 @@
               "RelativeToolTip": "View\\UserControls\\ColorSelection.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T11:32:32.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T11:32:32.526Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "ColorSelectorViewModel.cs",
               "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ColorSelectorViewModel.cs",
               "RelativeDocumentMoniker": "ViewModel\\ColorSelectorViewModel.cs",
@@ -51,25 +170,37 @@
               "RelativeToolTip": "ViewModel\\ColorSelectorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T11:31:02.634Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T11:31:02.634Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ConnectionInfoViewModel.cs",
               "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ConnectionInfoViewModel.cs",
               "RelativeDocumentMoniker": "ViewModel\\ConnectionInfoViewModel.cs",
               "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ConnectionInfoViewModel.cs",
               "RelativeToolTip": "ViewModel\\ConnectionInfoViewModel.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAA9wD0AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T11:24:59.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\MainWindowViewModel.cs",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\MainWindowViewModel.cs",
+              "RelativeToolTip": "ViewModel\\MainWindowViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T13:01:53.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
@@ -77,8 +208,7 @@
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T11:24:54.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T11:24:54.417Z"
             }
           ]
         }
