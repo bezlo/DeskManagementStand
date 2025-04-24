@@ -50,11 +50,18 @@ public class ConnectionInfoViewModel : INotifyPropertyChanged
             ConnectButtonCommand = new RelayCommand(_ => Connect());
             DisconnectButtonCommand = new RelayCommand(_ => Disconnect());
             // Initialize the ColorSynchronizationService with the TCP handler and a lambda to get the selected color value
-            _colorSyncService = new ColorSynchronizationService(_tcpHandler, () => ColorSelectorViewModel.SelectedColorValue);
+            _colorSyncService = new ColorSynchronizationService(() => ColorSelectorViewModel.SelectedColorValue);
             _colorSyncService.Start();
-        }
 
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
+            _colorSyncService.ColorChanged += color =>
+            {
+                // Reaguj na nowy kolor 
+                _tcpHandler.SendAsync($"Nowy kolor: {color.R},{color.G},{color.B}");
+            };
+
+    }
+
+    protected void OnPropertyChanged([CallerMemberName] string name = null)
          {
              Debug.WriteLine($"Property changed: {name}");
              PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
