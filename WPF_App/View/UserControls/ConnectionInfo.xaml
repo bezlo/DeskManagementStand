@@ -4,10 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeskManagementStand_App.View.UserControls"
-        xmlns:vm="clr-namespace:DeskManagementStand_App.ViewModel"
         xmlns:userControls="clr-namespace:DeskManagementStand_App.View.UserControls" 
+        xmlns:vm="clr-namespace:DeskManagementStand_App.ViewModel"
         mc:Ignorable="d" Background="#333333"
         Height="450" Width="800">
+    <Window.DataContext>
+        <vm:ConnectionInfoViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -17,7 +20,7 @@
 
         <Grid Grid.Row="0" >
             <!--Menu Bar User Controls-->
-            <userControls:MenuBar/>
+            <userControls:MenuBar DataContext="{Binding MainWindowViewModel}"/>
         </Grid>
         <Grid Grid.Row="1" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" 
@@ -33,20 +36,27 @@
 
         <Grid Grid.Row="5">
             <StackPanel>
-                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible">
-                    <TextBox    Name="MessagesTextBox"
-                                IsReadOnly="True"
-                                TextWrapping="Wrap"
-                                VerticalScrollBarVisibility="Auto"
-                                AcceptsReturn="True"
-                                FontFamily="Consolas"
-                                FontSize="14"
-                                Background="#1E1E1E"
-                                Foreground="#DCDCAA"
-                                BorderBrush="Gray"
-                                Padding="10"
-                                Text="{Binding DataFromPi}">
-                    </TextBox>
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <TextBox 
+                        Text="{Binding MessagesFromPiText}" 
+                        IsReadOnly="True"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Auto"
+                        AcceptsReturn="True"
+                        FontFamily="Consolas"
+                        FontSize="14"
+                        Background="#1E1E1E"
+                        Foreground="#DCDCAA"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        Padding="10"
+                        Margin="10"
+                        HorizontalScrollBarVisibility="Disabled"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        Height="200">
+                     </TextBox>
+                    
                 </ScrollViewer>
 
                 <!-- Status dolny -->

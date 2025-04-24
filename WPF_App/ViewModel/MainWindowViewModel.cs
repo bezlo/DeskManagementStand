@@ -3,8 +3,8 @@ using System.Windows;
 using System.Windows.Input;
 using DeskManagementStand_App.MVVM;
 
-namespace DeskManagementStand_App.ViewModel
-{
+namespace DeskManagementStand_App.ViewModel;
+
     public class MainWindowViewModel
     {
         public ColorSelectorViewModel ColorSelectorViewModel { get; } = new ColorSelectorViewModel();
@@ -30,4 +30,4 @@ namespace DeskManagementStand_App.ViewModel
 
     }
 
-}
+
