@@ -76,7 +76,7 @@ public class ConnectionInfoViewModel : INotifyPropertyChanged
                 // Zarejestruj event — ZA KAŻDYM razem po nowym utworzeniu obiektu
                 _tcpHandler.DataReceived += OnDataReceived;
 
-                await _tcpHandler.ConnectAsync("192.168.0.182", 5000);
+                await _tcpHandler.ConnectAsync("192.168.0.134", 5000);
 
                 string message = $"Połączono z PC | {DateTime.Now:HH:mm:ss}";
                 await _tcpHandler.SendAsync(message);
