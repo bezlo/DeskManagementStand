@@ -1,7 +1,13 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using SharpVectors.Renderers.Wpf;
+using SharpVectors.Converters;
+using Windows.System;
+using System.IO;
+using System.ComponentModel;
 
 namespace DeskManagementStand_App.View.UserControls
 {
@@ -9,18 +15,86 @@ namespace DeskManagementStand_App.View.UserControls
     public partial class ColorSelection : UserControl
     {
         private ColorSelectorViewModel ViewModel => (ColorSelectorViewModel)DataContext;
+        private DrawingGroup DeskDrawing;
         public ColorSelection()
         {
             InitializeComponent();
             //DataContext = new ColorSelectorViewModel();
             Loaded += (s, e) => DrawColorRing(); // poczekaj na załadowanie, by mieć dostęp do ViewModel
+
+            //var path = System.IO.Path.GetFullPath("Resources/svg/Desk.svg");
+            string path = "Resources/svg/Desk.svg";
+
+            var reader = new FileSvgReader(new WpfDrawingSettings());
+            
+            var deskDrawing = reader.Read(path);
+
+            // Utwórz DrawingImage
+            var imageSource = new DrawingImage(deskDrawing);
+
+            // Przypisz jako źródło obrazka
+            DeskImage.Source = imageSource;
+
+            // Zapisz referencję, jeśli chcesz potem manipulować
+            this.DeskDrawing = deskDrawing;
+
+            // Ustaw kolor początkowy
+            //SetFillColor(Brushes.Black); // Ustaw wszystkie kolory na czerwone
+            // Ustaw wszystkie kolory na czarne
+            ChangeCurrentColorRecursive(deskDrawing, Brushes.Green);
+        }
+        //?????????????????????????????????????????????????????????????????????????????????
+        //private void ViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+        
+
+        private void ChangeCurrentColorTo(Brush newBrush)
+        {
+            ChangeCurrentColorRecursive(this.DeskDrawing, newBrush);
         }
 
+        private void ChangeCurrentColorRecursive(Drawing drawing, Brush newBrush)
+        {
+            if (drawing is DrawingGroup group)
+            {
+                foreach (var child in group.Children)
+                {
+                    ChangeCurrentColorRecursive(child, newBrush);
+                }
+            }
+            else if (drawing is GeometryDrawing geometryDrawing)
+            {
+                // Zmiana fill (Brush)
+                if (geometryDrawing.Brush is SolidColorBrush fillBrush &&
+                    fillBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
+                {
+                    geometryDrawing.Brush = newBrush;
+                }
+
+                // Zmiana stroke (Pen.Brush)
+                if (geometryDrawing.Pen?.Brush is SolidColorBrush strokeBrush &&
+                    strokeBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
+                {
+                    geometryDrawing.Pen.Brush = newBrush;
+                }
+            }
+        }
+
+
+        
         private void DrawColorRing()
         {
-            double centerX = 80;
-            double centerY = 80;
-            double radius = 80;
+            ColorRingCanvas.Children.Clear(); // Wyczyść poprzednie linie
+
+            double width = ColorRingCanvas.ActualWidth;
+            double height = ColorRingCanvas.ActualHeight;
+
+            if (width == 0 || height == 0) return; // Sprawdź, czy rozmiar jest prawidłowy
+            
+            double centerX = width / 2;
+            double centerY = height / 2;
+            
+            double radius = (Math.Min(width, height) / 2) - (0.2 * Math.Min(width, height)); // Ustaw promień na mniejszy wymiar minus margines
+
             for (int angle = 0; angle < 360; angle += 2)
             {
                 var color = ViewModel.GetType()
@@ -40,6 +114,10 @@ namespace DeskManagementStand_App.View.UserControls
                 };
                 ColorRingCanvas.Children.Add(line);
             }
+        }
+        private void ColorRingCanvas_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            DrawColorRing(); // Przerysuj przy każdej zmianie rozmiaru
         }
 
         private void ColorRingCanvas_MouseMove(object sender, MouseEventArgs e)

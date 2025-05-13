@@ -2,14 +2,16 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 //namespace DeskManagementStand_App.ViewModel;
-   // Klasa ViewModel dla ColorSelector
-    // Zawiera logikę do konwersji kolorów i powiadamiania o zmianach
-    // Implementuje INotifyPropertyChanged, aby powiadamiać widok o zmianach w danych
+// Klasa ViewModel dla ColorSelector
+// Zawiera logikę do konwersji kolorów i powiadamiania o zmianach
+// Implementuje INotifyPropertyChanged, aby powiadamiać widok o zmianach w danych
 
-    public class ColorSelectorViewModel : INotifyPropertyChanged
+public class ColorSelectorViewModel : INotifyPropertyChanged
     {
         private static SolidColorBrush _selectedColor = new SolidColorBrush(Colors.Magenta);
         public static Color SelectedColorValue => _selectedColor.Color;
@@ -49,10 +51,10 @@ using System.Windows.Media;
         }
     
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            Debug.WriteLine($"Property changed: {name}");
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));    
-        } 
-    
+    protected void OnPropertyChanged([CallerMemberName] string name = null)
+    {
+        Debug.WriteLine($"Property changed: {name}");
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
     }
+}
