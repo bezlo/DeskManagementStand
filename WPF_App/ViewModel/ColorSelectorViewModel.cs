@@ -5,6 +5,8 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
+using SharpVectors.Converters;
+using SharpVectors.Renderers.Wpf;
 
 //namespace DeskManagementStand_App.ViewModel;
 // Klasa ViewModel dla ColorSelector
@@ -13,10 +15,68 @@ using System.Windows.Threading;
 
 public class ColorSelectorViewModel : INotifyPropertyChanged
     {
-        private static SolidColorBrush _selectedColor = new SolidColorBrush(Colors.Magenta);
-        public static Color SelectedColorValue => _selectedColor.Color;
-    
-        public SolidColorBrush SelectedColor
+    //##### public
+    public static Color SelectedColorValue => _selectedColor.Color;
+
+
+    //##### private    
+    private static SolidColorBrush _selectedColor = new SolidColorBrush(Colors.Magenta);
+
+    private static FileSvgReader _reader = new FileSvgReader(new WpfDrawingSettings());
+    //
+    private static string DeskPath = "Resources/svg/Desk.svg";
+    private static string DeskBackPath ="Resources/svg/Back.svg";
+    //
+    private static DrawingGroup _deskDrawing = _reader.Read(DeskPath);
+   
+    private ImageSource _deskImageSource;
+    public ImageSource DeskImageSource
+    {
+        get => _deskImageSource;
+        set
+        {
+            _deskImageSource = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public ColorSelectorViewModel()
+    {
+        // Ustawienia początkowe
+        // Zmiana koloru początkowego
+        SetColorFromAngle(160);
+        ChangeCurrentColorRecursive(_deskDrawing, _selectedColor);
+        DeskImageSource = new DrawingImage(_deskDrawing);
+        
+    }
+
+    private void ChangeCurrentColorRecursive(Drawing drawing, Brush newBrush)
+    {
+        if (drawing is DrawingGroup group)
+        {
+            foreach (var child in group.Children)
+            {
+                ChangeCurrentColorRecursive(child, newBrush);
+            }
+        }
+        else if (drawing is GeometryDrawing geometryDrawing)
+        {
+            // Zmiana fill (Brush)
+            if (geometryDrawing.Brush is SolidColorBrush fillBrush &&
+                fillBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
+            {
+                geometryDrawing.Brush = newBrush;
+            }
+
+            // Zmiana stroke (Pen.Brush)
+            if (geometryDrawing.Pen?.Brush is SolidColorBrush strokeBrush &&
+                strokeBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
+            {
+                geometryDrawing.Pen.Brush = newBrush;
+            }
+        }
+    }
+    public SolidColorBrush SelectedColor
         {
             get => _selectedColor;
             set

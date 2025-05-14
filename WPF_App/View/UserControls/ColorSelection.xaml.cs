@@ -21,63 +21,11 @@ namespace DeskManagementStand_App.View.UserControls
             InitializeComponent();
             //DataContext = new ColorSelectorViewModel();
             Loaded += (s, e) => DrawColorRing(); // poczekaj na załadowanie, by mieć dostęp do ViewModel
-
-            //var path = System.IO.Path.GetFullPath("Resources/svg/Desk.svg");
-            string path = "Resources/svg/Desk.svg";
-
-            var reader = new FileSvgReader(new WpfDrawingSettings());
-            
-            var deskDrawing = reader.Read(path);
-
-            // Utwórz DrawingImage
-            var imageSource = new DrawingImage(deskDrawing);
-
-            // Przypisz jako źródło obrazka
-            DeskImage.Source = imageSource;
-
-            // Zapisz referencję, jeśli chcesz potem manipulować
-            this.DeskDrawing = deskDrawing;
-
-            // Ustaw kolor początkowy
-            //SetFillColor(Brushes.Black); // Ustaw wszystkie kolory na czerwone
-            // Ustaw wszystkie kolory na czarne
-            ChangeCurrentColorRecursive(deskDrawing, Brushes.Green);
         }
         //?????????????????????????????????????????????????????????????????????????????????
         //private void ViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         
 
-        private void ChangeCurrentColorTo(Brush newBrush)
-        {
-            ChangeCurrentColorRecursive(this.DeskDrawing, newBrush);
-        }
-
-        private void ChangeCurrentColorRecursive(Drawing drawing, Brush newBrush)
-        {
-            if (drawing is DrawingGroup group)
-            {
-                foreach (var child in group.Children)
-                {
-                    ChangeCurrentColorRecursive(child, newBrush);
-                }
-            }
-            else if (drawing is GeometryDrawing geometryDrawing)
-            {
-                // Zmiana fill (Brush)
-                if (geometryDrawing.Brush is SolidColorBrush fillBrush &&
-                    fillBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
-                {
-                    geometryDrawing.Brush = newBrush;
-                }
-
-                // Zmiana stroke (Pen.Brush)
-                if (geometryDrawing.Pen?.Brush is SolidColorBrush strokeBrush &&
-                    strokeBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
-                {
-                    geometryDrawing.Pen.Brush = newBrush;
-                }
-            }
-        }
 
 
         

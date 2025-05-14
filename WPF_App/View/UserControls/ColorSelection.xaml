@@ -30,7 +30,7 @@
             <Image Source="{svgc:SvgImage Source=/Resources/svg/Desk.svg, AppName=DeskManagementStand_App}" Margin="5,5,5,5" />
             -->
 
-            <Image x:Name="DeskImage" Stretch="Fill" />
+            <Image x:Name="DeskImage" Stretch="Fill" Source="{Binding DeskImageSource}" />
 
             <!--
             <Canvas  Width="180" Height="40"  Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
