@@ -11,6 +11,7 @@ namespace DeskManagementStand_App.ViewModel;
 
 public class ConnectionInfoViewModel : INotifyPropertyChanged
     {
+        private readonly ColorSelectorViewModel _colorSelectorViewModel;
         public event PropertyChangedEventHandler PropertyChanged;
 
         private TCP_ClientHandler _tcpHandler = new TCP_ClientHandler();
@@ -44,13 +45,14 @@ public class ConnectionInfoViewModel : INotifyPropertyChanged
             }
     }
 
-        public ConnectionInfoViewModel()
+        public ConnectionInfoViewModel(ColorSelectorViewModel _colorViewModel)
         {
-            // Initialize the TCP handler
-            ConnectButtonCommand = new RelayCommand(_ => Connect());
+        _colorSelectorViewModel = _colorViewModel;
+        // Initialize the TCP handler
+        ConnectButtonCommand = new RelayCommand(_ => Connect());
             DisconnectButtonCommand = new RelayCommand(_ => Disconnect());
             // Initialize the ColorSynchronizationService with the TCP handler and a lambda to get the selected color value
-            _colorSyncService = new ColorSynchronizationService(() => ColorSelectorViewModel.SelectedColorValue);
+            _colorSyncService = new ColorSynchronizationService(() => _colorSelectorViewModel.SelectedColor);
             _colorSyncService.Start();
 
             _colorSyncService.ColorChanged += color =>

@@ -7,7 +7,74 @@
              xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
              mc:Ignorable="d" Background="#333333"
              d:DesignHeight="160" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DrawingImage x:Key="MyVectorImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <!-- Cała Twoja zawartość DrawingGroup tutaj -->
+                    <DrawingGroup x:Name="DrawingLayer">
+                        <DrawingGroup.ClipGeometry>
+                            <RectangleGeometry Rect="0,0,316,170" />
+                        </DrawingGroup.ClipGeometry>
+                        <GeometryDrawing Brush="#FF3C3C3C">
+                            <GeometryDrawing.Geometry>
+                                <PathGeometry FillRule="Nonzero" Figures="M238.481,89.6285L238.481,68.4509 246.655,69.194 247.769,68.6139 247.769,79.7828 247.769,88.5139 248.512,89.6285 247.826,156.877 270.062,143.13 270.062,72.5378 271.176,71.0517 271.176,56.4328 283.065,50.2456 280.465,53.2179 280.465,70.3086 281.208,70.3086 280.465,141.644 282.322,141.644 282.322,143.13 245.54,165.793 246.283,168.023 242.196,169.137 234.394,167.28 234.394,164.679 237.366,163.564 237.366,90.7431 238.481,89.6285z" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        <GeometryDrawing>
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="#FF0C0C0C" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Geometry>
+                                <PathGeometry FillRule="Nonzero" Figures="M237.366,163.564L237.366,90.7431 238.481,89.6285 238.481,68.4509 246.655,69.194 247.769,68.6139 247.769,79.7828 247.769,88.5139 248.512,89.6285 247.826,156.877 M237.366,163.564L234.394,164.679 234.394,167.28 242.196,169.137 246.283,168.023 245.54,165.793 282.322,143.13 282.322,141.644 280.465,141.644 M237.366,163.564L244.054,164.679 247.769,162.45 247.826,156.877 M280.465,141.644L281.208,70.3086 280.465,70.3086 280.465,53.2179 283.065,50.2456 271.176,56.4328 271.176,71.0517 270.062,72.5378 270.062,143.13 M280.465,141.644L275.263,144.987 270.062,143.13 M270.062,143.13L247.826,156.877" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF3C3C3C">
+                            <GeometryDrawing.Geometry>
+                                <PathGeometry FillRule="Nonzero" Figures="M37.8514,63.6209L37.8514,42.8148 47.8829,44.301 47.8829,62.8778 48.626,62.8778 49.6822,130.126 75.005,116.379 74.6335,47.2733 80.5781,48.0163 85.7796,48.3879 85.7796,114.893 87.6373,114.893 87.6373,117.494 43.4244,140.529 35.9937,139.043 35.9937,136.442 38.5945,134.956 37.1083,63.6209 37.8514,63.6209z" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        <GeometryDrawing>
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="#FF0C0C0C" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Geometry>
+                                <PathGeometry FillRule="Nonzero" Figures="M38.5945,134.956L37.1083,63.6209 37.8514,63.6209 37.8514,42.8148 47.8829,44.301 47.8829,62.8778 48.626,62.8778 49.6822,130.126 M38.5945,134.956L35.9937,136.442 35.9937,139.043 43.4244,140.529 87.6373,117.494 87.6373,114.893 85.7796,114.893 M38.5945,134.956L44.5391,137.185 49.7406,133.841 49.6822,130.126 M85.7796,114.893L85.7796,48.3879 80.5781,48.0163 74.6335,47.2733 75.005,116.379 M85.7796,114.893L80.5781,117.494 75.005,116.379 M49.6822,130.126L75.005,116.379" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF1D1D1D">
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="#FF0C0C0C" Thickness="3" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Geometry>
+                                <PathGeometry FillRule="Nonzero" Figures="M301.257,39.6937L301.257,40.7933 247.299,69.1341 10,40.0013 10,39.3421 70.6543,13.141 301.257,39.6937z" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        <DrawingGroup>
+                            <GeometryDrawing Brush="{Binding SelectedBrush}">
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry FillRule="Nonzero" Figures="M248.513,71.0516L248.513,66.5932 302.757,37.6133 303.5,38.728 303.5,42.0718 248.513,71.0516z" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                            <GeometryDrawing>
+                                <GeometryDrawing.Pen>
+                                    <Pen Brush="{Binding SelectedBrush}" Thickness="3" StartLineCap="Round" EndLineCap="Round" LineJoin="Round"/>
+                                </GeometryDrawing.Pen>
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry FillRule="Nonzero" Figures="M302.757,37.6133L248.513,66.5932 248.513,71.0516 303.5,42.0718 303.5,38.728 302.757,37.6133z M302.757,37.6133L71.2897,10.8627 8.5,37.6133 8.5,41.3287" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+    </UserControl.Resources>
+
+    
     <Grid>
+        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="35*"/>
             <ColumnDefinition Width="65*"/>
@@ -25,13 +92,19 @@
         </Grid>
         <!-- Led tape-->
         <Grid x:Name="DeskGrid" Grid.Column="1" Grid.Row="0">
-            
+
+
+            <Image Source="{StaticResource MyVectorImage}" Stretch="Uniform">
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="90" ShadowDepth="0" Color="{Binding SelectedColor}" Opacity="0.5"/>
+                </Image.Effect>
+            </Image>
             <!--
             <Image Source="{svgc:SvgImage Source=/Resources/svg/Desk.svg, AppName=DeskManagementStand_App}" Margin="5,5,5,5" />
+            
+
+            <Image x:Name="DeskImage" Stretch="Uniform" Source="{Binding DeskImageSource}" />
             -->
-
-            <Image x:Name="DeskImage" Stretch="Fill" Source="{Binding DeskImageSource}" />
-
             <!--
             <Canvas  Width="180" Height="40"  Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="True">
                 <Canvas.LayoutTransform>

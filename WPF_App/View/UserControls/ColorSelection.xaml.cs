@@ -26,9 +26,6 @@ namespace DeskManagementStand_App.View.UserControls
         //private void ViewModel_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         
 
-
-
-        
         private void DrawColorRing()
         {
             ColorRingCanvas.Children.Clear(); // Wyczyść poprzednie linie
@@ -73,8 +70,8 @@ namespace DeskManagementStand_App.View.UserControls
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 var pos = e.GetPosition(ColorRingCanvas);
-                double centerX = ColorRingCanvas.Width / 2;
-                double centerY = ColorRingCanvas.Height / 2;
+                double centerX = ColorRingCanvas.ActualWidth / 2;
+                double centerY = ColorRingCanvas.ActualHeight / 2;
                 double dx = pos.X - centerX;
                 double dy = pos.Y - centerY;
                 double angle = (Math.Atan2(dy, dx) * 180 / Math.PI + 360) % 360;

@@ -2,11 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using System.Windows;
 using System.Windows.Media;
-using System.Windows.Threading;
-using SharpVectors.Converters;
-using SharpVectors.Renderers.Wpf;
 
 //namespace DeskManagementStand_App.ViewModel;
 // Klasa ViewModel dla ColorSelector
@@ -16,18 +12,20 @@ using SharpVectors.Renderers.Wpf;
 public class ColorSelectorViewModel : INotifyPropertyChanged
     {
     //##### public
-    public static Color SelectedColorValue => _selectedColor.Color;
+    public  Color SelectedColorValue;
 
+    public event PropertyChangedEventHandler PropertyChanged;
 
+    //public event Action<Color> ColorChanged;
     //##### private    
-    private static SolidColorBrush _selectedColor = new SolidColorBrush(Colors.Magenta);
-
-    private static FileSvgReader _reader = new FileSvgReader(new WpfDrawingSettings());
-    //
-    private static string DeskPath = "Resources/svg/Desk.svg";
-    private static string DeskBackPath ="Resources/svg/Back.svg";
-    //
-    private static DrawingGroup _deskDrawing = _reader.Read(DeskPath);
+    private Color _selectedColor;
+    private Brush _selectedBrush;
+    //private static FileSvgReader _reader = new FileSvgReader(new WpfDrawingSettings());
+    ////
+    //private static string DeskPath = "Resources/svg/Desk.svg";
+    //private static string DeskBackPath ="Resources/svg/Back.svg";
+    ////
+    //private static DrawingGroup _deskDrawing = _reader.Read(DeskPath);
    
     private ImageSource _deskImageSource;
     public ImageSource DeskImageSource
@@ -40,58 +38,69 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
         }
     }
 
-    public ColorSelectorViewModel()
-    {
-        // Ustawienia początkowe
-        // Zmiana koloru początkowego
-        SetColorFromAngle(160);
-        ChangeCurrentColorRecursive(_deskDrawing, _selectedColor);
-        DeskImageSource = new DrawingImage(_deskDrawing);
-        
-    }
+    
 
-    private void ChangeCurrentColorRecursive(Drawing drawing, Brush newBrush)
-    {
-        if (drawing is DrawingGroup group)
-        {
-            foreach (var child in group.Children)
-            {
-                ChangeCurrentColorRecursive(child, newBrush);
-            }
-        }
-        else if (drawing is GeometryDrawing geometryDrawing)
-        {
-            // Zmiana fill (Brush)
-            if (geometryDrawing.Brush is SolidColorBrush fillBrush &&
-                fillBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
-            {
-                geometryDrawing.Brush = newBrush;
-            }
-
-            // Zmiana stroke (Pen.Brush)
-            if (geometryDrawing.Pen?.Brush is SolidColorBrush strokeBrush &&
-                strokeBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
-            {
-                geometryDrawing.Pen.Brush = newBrush;
-            }
-        }
-    }
-    public SolidColorBrush SelectedColor
+  
+    public Color SelectedColor
         {
             get => _selectedColor;
             set
             {
+            if (_selectedColor == value) return; // Zmiana tylko, gdy kolor się zmienia
+            else if (_selectedColor != value)
+            {
                 _selectedColor = value;
+                SelectedColorValue = value;
                 OnPropertyChanged();
-                OnPropertyChanged(nameof(SelectedColorValue));
+                //OnPropertyChanged(nameof(SelectedColorValue));
+                //ColorChanged?.Invoke(value); // powiadom inne klas
+            }
             }
         }
-        
-        public void SetColorFromAngle(double angleDegrees)
+    public Brush SelectedBrush
+    {
+        get => _selectedBrush;
+        set
         {
-            var color = HsvToRgb(angleDegrees, 1, 1);
-            SelectedColor = new SolidColorBrush(color);
+            if (_selectedBrush == value) return; // Zmiana tylko, gdy kolor się zmienia
+            else if (_selectedBrush != value)
+            {
+                _selectedBrush = value;
+                OnPropertyChanged();
+            }
         }
+    }
+    //private void ChangeCurrentColorRecursive(Drawing drawing, Brush newBrush)
+    //{
+    //    if (drawing is DrawingGroup group)
+    //    {
+    //        foreach (var child in group.Children)
+    //        {
+    //            ChangeCurrentColorRecursive(child, newBrush);
+    //        }
+    //    }
+    //    else if (drawing is GeometryDrawing geometryDrawing)
+    //    {
+    //        // Zmiana fill (Brush)
+    //        if (geometryDrawing.Brush is SolidColorBrush fillBrush &&
+    //            fillBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
+    //        {
+    //            geometryDrawing.Brush = newBrush;
+    //        }
+    //
+    //        // Zmiana stroke (Pen.Brush)
+    //        if (geometryDrawing.Pen?.Brush is SolidColorBrush strokeBrush &&
+    //            strokeBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
+    //        {
+    //            geometryDrawing.Pen.Brush = newBrush;
+    //        }
+    //    }
+    //}
+    public void SetColorFromAngle(double angleDegrees)
+        {
+            SelectedColor = HsvToRgb(angleDegrees, 1, 1);
+            SelectedBrush = new SolidColorBrush(SelectedColor);
+    }
     
         private Color HsvToRgb(double h, double s, double v)
         {
@@ -110,7 +119,6 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
             return Color.FromRgb((byte)((r + m) * 255), (byte)((g + m) * 255), (byte)((b + m) * 255));
         }
     
-        public event PropertyChangedEventHandler PropertyChanged;
     protected void OnPropertyChanged([CallerMemberName] string name = null)
     {
         Debug.WriteLine($"Property changed: {name}");
