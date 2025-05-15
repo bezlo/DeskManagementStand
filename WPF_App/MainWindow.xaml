@@ -43,7 +43,7 @@
         </Grid>
 
         <Grid Grid.Row="4">
-            <userControls:ChargingModule/>
+            <userControls:ChargingView/>
         </Grid>
 
 

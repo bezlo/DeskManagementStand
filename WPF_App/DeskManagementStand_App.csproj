@@ -32,4 +32,10 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="Resources\xaml\Desk.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
 </Project>

@@ -15,37 +15,11 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
     public  Color SelectedColorValue;
 
     public event PropertyChangedEventHandler PropertyChanged;
-
-    //public event Action<Color> ColorChanged;
-    //##### private    
-    private Color _selectedColor;
-    private Brush _selectedBrush;
-    //private static FileSvgReader _reader = new FileSvgReader(new WpfDrawingSettings());
-    ////
-    //private static string DeskPath = "Resources/svg/Desk.svg";
-    //private static string DeskBackPath ="Resources/svg/Back.svg";
-    ////
-    //private static DrawingGroup _deskDrawing = _reader.Read(DeskPath);
-   
-    private ImageSource _deskImageSource;
-    public ImageSource DeskImageSource
+    public Color SelectedColor
     {
-        get => _deskImageSource;
+        get => _selectedColor;
         set
         {
-            _deskImageSource = value;
-            OnPropertyChanged();
-        }
-    }
-
-    
-
-  
-    public Color SelectedColor
-        {
-            get => _selectedColor;
-            set
-            {
             if (_selectedColor == value) return; // Zmiana tylko, gdy kolor się zmienia
             else if (_selectedColor != value)
             {
@@ -55,8 +29,8 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
                 //OnPropertyChanged(nameof(SelectedColorValue));
                 //ColorChanged?.Invoke(value); // powiadom inne klas
             }
-            }
         }
+    }
     public Brush SelectedBrush
     {
         get => _selectedBrush;
@@ -70,32 +44,18 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
             }
         }
     }
-    //private void ChangeCurrentColorRecursive(Drawing drawing, Brush newBrush)
-    //{
-    //    if (drawing is DrawingGroup group)
-    //    {
-    //        foreach (var child in group.Children)
-    //        {
-    //            ChangeCurrentColorRecursive(child, newBrush);
-    //        }
-    //    }
-    //    else if (drawing is GeometryDrawing geometryDrawing)
-    //    {
-    //        // Zmiana fill (Brush)
-    //        if (geometryDrawing.Brush is SolidColorBrush fillBrush &&
-    //            fillBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
-    //        {
-    //            geometryDrawing.Brush = newBrush;
-    //        }
-    //
-    //        // Zmiana stroke (Pen.Brush)
-    //        if (geometryDrawing.Pen?.Brush is SolidColorBrush strokeBrush &&
-    //            strokeBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
-    //        {
-    //            geometryDrawing.Pen.Brush = newBrush;
-    //        }
-    //    }
-    //}
+    //public event Action<Color> ColorChanged;
+
+
+
+
+
+    //##### private    
+    private Color _selectedColor;
+
+    private Brush _selectedBrush;
+    
+    
     public void SetColorFromAngle(double angleDegrees)
         {
             SelectedColor = HsvToRgb(angleDegrees, 1, 1);
@@ -125,4 +85,31 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
     }
+
+    //private void ChangeCurrentColorRecursive(Drawing drawing, Brush newBrush)
+    //{
+    //    if (drawing is DrawingGroup group)
+    //    {
+    //        foreach (var child in group.Children)
+    //        {
+    //            ChangeCurrentColorRecursive(child, newBrush);
+    //        }
+    //    }
+    //    else if (drawing is GeometryDrawing geometryDrawing)
+    //    {
+    //        // Zmiana fill (Brush)
+    //        if (geometryDrawing.Brush is SolidColorBrush fillBrush &&
+    //            fillBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
+    //        {
+    //            geometryDrawing.Brush = newBrush;
+    //        }
+    //
+    //        // Zmiana stroke (Pen.Brush)
+    //        if (geometryDrawing.Pen?.Brush is SolidColorBrush strokeBrush &&
+    //            strokeBrush.Color == ((SolidColorBrush)SystemColors.ControlTextBrush).Color)
+    //        {
+    //            geometryDrawing.Pen.Brush = newBrush;
+    //        }
+    //    }
+    //}
 }
