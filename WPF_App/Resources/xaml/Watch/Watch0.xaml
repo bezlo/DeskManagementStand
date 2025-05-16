@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DrawingImage x:Key="Watch0">
+        <DrawingImage.Drawing>
+
+            <DrawingGroup >
+                <DrawingGroup x:Name="DrawingLayer">
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,192,80" />
+                    </DrawingGroup.ClipGeometry>
+                    <GeometryDrawing Brush="#FF469758">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry FillRule="Nonzero" Figures="M142,15C155.527,15 167.824,17.9935 176.774,22.8838 185.687,27.7537 191.5,34.6456 191.5,42.5 191.5,50.3544 185.687,57.2463 176.774,62.1162 167.824,67.0065 155.527,70 142,70 128.473,70 116.176,67.0065 107.226,62.1162 98.7514,57.486 93.0797,51.0277 92.542,43.6523 90.4237,44.043 87.6791,44.9902 85.3496,46.7373 82.642,48.768 80.5001,51.8649 80.5,56.5 80.5,61.8258 78.2581,65.2512 75.3965,67.3115 72.5859,69.335 69.2433,70 67,70L57.0498,70C54.7911,70.2559 51.4458,69.9 48.6221,67.9619 45.7089,65.9623 43.5,62.3816 43.5,56.5 43.4999,51.226 41.3252,48.0259 38.666,46.1113 35.9558,44.16 32.6733,43.5 30.5,43.5L16.9463,43.5C16.5604,48.9746 14.0661,52.5744 10.959,54.8115 7.62752,57.2101 3.65997,58 1,58L0,58 0,26 1,26C3.65997,26 7.62752,26.7899 10.959,29.1885 14.2515,31.5591 16.8568,35.4598 16.9932,41.5L30.5,41.5C32.9933,41.5 36.7109,42.2398 39.834,44.4883 43.0082,46.7737 45.4999,50.5741 45.5,56.5 45.5,61.8186 47.4589,64.7382 49.7539,66.3135 52.1093,67.93 54.9736,68.2358 56.8809,68.0068L56.9404,68 67,68C68.9233,68 71.8309,67.4148 74.2285,65.6885 76.5751,63.9989 78.5,61.1739 78.5,56.5 78.5001,51.1356 81.0247,47.482 84.1504,45.1377 86.896,43.0785 90.1088,42.0211 92.5254,41.625 92.9393,34.1343 98.6454,27.572 107.226,22.8838 116.176,17.9935 128.473,15 142,15z M142,17C128.742,17 116.788,19.9389 108.185,24.6396 99.5441,29.3608 94.5,35.719 94.5,42.5 94.5,49.281 99.5441,55.6392 108.185,60.3604 116.788,65.0611 128.742,68 142,68 155.258,68 167.212,65.0611 175.815,60.3604 184.456,55.6391 189.5,49.2811 189.5,42.5 189.5,35.7189 184.456,29.3609 175.815,24.6396 167.212,19.9389 155.258,17 142,17z M138.85,37.2715L159.5,37.2715 136.05,64 145.15,44.6729 124.5,44.6729 145.15,20 138.85,37.2715z M2,55.959C4.2751,55.7836 7.26343,55.0083 9.79102,53.1885 12.6584,51.1239 15,47.6739 15,42 15,36.3261 12.6584,32.8761 9.79102,30.8115 7.2634,28.9916 4.27511,28.2154 2,28.04L2,55.959z M128.782,42.6729L148.303,42.6729 146.959,45.5244 143.901,52.0166 155.084,39.2715 135.991,39.2715 136.971,36.5859 139.361,30.0312 128.782,42.6729z" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FF7C7C7C">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="#FF0C0C0C" Thickness="3" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry RadiusX="6.5" RadiusY="6.5" Rect="121.5,16.5,47,47" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FF0C0C0C">
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry RadiusX="0" RadiusY="0" Rect="170,26,2,5" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FF0C0C0C">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry FillRule="Nonzero" Figures="M134,0L156,0C156,0 156,10 157,12 158,14 159,15 159,15L131,15C131,15 132,14 133,12 134,10 134,0 134,0z" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing Brush="#FF0C0C0C">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry FillRule="Nonzero" Figures="M133,80L155,80C155,80 155,70 156,68 157,66 158,65 158,65L130,65C130,65 131,66 132,68 133,70 133,80 133,80z" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>

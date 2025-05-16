@@ -35,15 +35,38 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <userControls:ChargingModule/>
+            <userControls:ChargingView UnpluggedDevice="PluggedPhoneTransparent"
+                           PluggedDevice="PluggedPhone"
+                           PluggedDevice1="PluggedPhoneBattery1"
+                           PluggedDevice2="PluggedPhoneBattery12"
+                           PluggedDevice3="PluggedPhoneBattery123"
+                           PluggedDevice4="PluggedPhoneBattery1234"/>
         </Grid>
 
         <Grid Grid.Row="3">
-            <userControls:ChargingModule/>
+            <userControls:ChargingView UnpluggedDevice="HeadPhonesTransparent"
+                           PluggedDevice="HeadPhones0"
+                           PluggedDevice1="HeadPhones1"
+                           PluggedDevice2="HeadPhones2"
+                           PluggedDevice3="HeadPhones3"
+                           PluggedDevice4="HeadPhones4"/>
         </Grid>
 
         <Grid Grid.Row="4">
-            <userControls:ChargingView/>
+            <userControls:ChargingView UnpluggedDevice="WatchTransparent"
+                           PluggedDevice="Watch0"
+                           PluggedDevice1="Watch1"
+                           PluggedDevice2="Watch2"
+                           PluggedDevice3="Watch3"
+                           PluggedDevice4="Watch4"/>
+        </Grid>
+        <Grid Grid.Row="5">
+            <userControls:ChargingView UnpluggedDevice="EarPhonesTransparent"
+                   PluggedDevice="EarPhones0"
+                   PluggedDevice1="EarPhones1"
+                   PluggedDevice2="EarPhones2"
+                   PluggedDevice3="EarPhones3"
+                   PluggedDevice4="EarPhones4"/>
         </Grid>
 
 

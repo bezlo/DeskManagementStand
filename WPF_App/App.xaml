@@ -6,9 +6,39 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!-- Styles -->
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
                 <ResourceDictionary Source="Styles/DangerButtonStyle.xaml"/>
                 <ResourceDictionary Source="Styles/NormalButtonStyle.xaml"/>
+                <!-- Images charging phone -->
+                <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneTransparent.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Phone/UnpluggedPhone.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneBattery1.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneBattery12.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneBattery123.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneBattery1234.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhone.xaml"/>
+                <!-- Images charging watch -->
+                <ResourceDictionary Source="/Resources/xaml/Watch/Watch0.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Watch/Watch1.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Watch/Watch2.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Watch/Watch3.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Watch/Watch4.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/Watch/WatchTransparent.xaml"/>
+                <!-- Images charging EarPhones -->
+                <ResourceDictionary Source="/Resources/xaml/EarPhones/EarPhones0.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/EarPhones/EarPhones1.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/EarPhones/EarPhones2.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/EarPhones/EarPhones3.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/EarPhones/EarPhones4.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/EarPhones/EarPhonesTransparent.xaml"/>
+                <!-- Images charging HeadPhones -->
+                <ResourceDictionary Source="/Resources/xaml/HeadPhones/HeadPhones0.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/HeadPhones/HeadPhones1.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/HeadPhones/HeadPhones2.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/HeadPhones/HeadPhones3.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/HeadPhones/HeadPhones4.xaml"/>
+                <ResourceDictionary Source="/Resources/xaml/HeadPhones/HeadPhonesTransparent.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -6,17 +6,7 @@
              xmlns:local="clr-namespace:DeskManagementStand_App.View.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/xaml/Phone/UnpluggedPhone.xaml"/>
-                <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneBattery1.xaml"/>
-                <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneBattery12.xaml"/>
-                <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneBattery123.xaml"/>
-                <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneBattery1234.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
+   
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"/>

@@ -36,6 +36,9 @@
     <Page Update="Resources\xaml\Desk.xaml">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Page>
+    <Page Update="Resources\xaml\Phone\PluggedPhoneTransparent.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

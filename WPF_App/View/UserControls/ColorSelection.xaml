@@ -40,9 +40,11 @@
                 </Image.Effect>
             </Image>
             <!-- Led Tape -->
+            <!--
             <Viewbox HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="40" Width="300">
                 <ContentControl Content="{Binding}" ContentTemplate="{StaticResource LedTape}" />
             </Viewbox>
+             -->
         </Grid>
     </Grid>
 </UserControl>
