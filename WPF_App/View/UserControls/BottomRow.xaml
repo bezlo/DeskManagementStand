@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="DeskManagementStand_App.View.UserControls.BottomRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DeskManagementStand_App.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Autors" Foreground="DarkViolet" Opacity="0.4"
+               Margin="10,0,0,0"  FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="Autors:" Foreground="DarkViolet" Opacity="0.4"
+               Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="Autors:" Foreground="DarkViolet" Opacity="0.4"
+               Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="" Foreground="DarkViolet" Opacity="0.4"
+                            Margin="10,0,0,0"  FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="Sebastian Danielczyk (bezlo)" Foreground="DarkViolet" Opacity="0.4"
+                            Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="Design and Graphics - avimmimo" Foreground="DarkViolet" Opacity="0.4"
+                            Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="" Foreground="DarkViolet" Opacity="0.4"
+                        Margin="10,0,0,0"  FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="Version:" Foreground="DarkViolet" Opacity="0.4"
+                        Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Text="Release Date:" Foreground="DarkViolet" Opacity="0.4"
+                        Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="" Foreground="DarkViolet" Opacity="0.4"
+                        Margin="10,0,10,0"  FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBlock Text="1.0.0" Foreground="DarkViolet" Opacity="0.4"
+                        Margin="10,0,10,0"  FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <TextBlock Text="19.05.2025" Foreground="DarkViolet" Opacity="0.4"
+                        Margin="10,0,10,0"  FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

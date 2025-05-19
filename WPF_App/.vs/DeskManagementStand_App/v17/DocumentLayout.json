@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\view\\usercontrols\\chargingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\chargingview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\view\\usercontrols\\appname.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\appname.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\view\\usercontrols\\chargingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\chargingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\view\\usercontrols\\colorselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\colorselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\view\\usercontrols\\chargingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\chargingview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -46,20 +42,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ChargingView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\ChargingView.xaml.cs",
               "RelativeDocumentMoniker": "View\\UserControls\\ChargingView.xaml.cs",
               "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\ChargingView.xaml.cs",
               "RelativeToolTip": "View\\UserControls\\ChargingView.xaml.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwGAAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T14:43:05.543Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "ChargingView.xaml",
               "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\ChargingView.xaml",
               "RelativeDocumentMoniker": "View\\UserControls\\ChargingView.xaml",
@@ -67,18 +63,6 @@
               "RelativeToolTip": "View\\UserControls\\ChargingView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-05-19T14:41:20.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppName.xaml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\AppName.xaml",
-              "RelativeDocumentMoniker": "View\\UserControls\\AppName.xaml",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\AppName.xaml",
-              "RelativeToolTip": "View\\UserControls\\AppName.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-19T16:25:07.347Z",
               "EditorCaption": ""
             },
             {
