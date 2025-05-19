@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="DeskManagementStand_App.View.UserControls.AppName"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DeskManagementStand_App.View.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="Gray" CornerRadius="10" Height="2"
+                HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        <Border Grid.Row="2" Background="Gray" CornerRadius="10" Height="2"
+                HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        <Grid Grid.Row ="1">
+            <TextBlock
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        FontSize="20"
+        FontWeight="Bold"
+        Foreground="Gray"
+        Text="RGB DeskManagementStand"/>
+        </Grid>
+        
+    </Grid>
+</UserControl>

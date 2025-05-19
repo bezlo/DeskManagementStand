@@ -9,32 +9,63 @@
        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
        mc:Ignorable="d"
        Background="#333333"
-       Title="MainWindow" Height="1000" Width="1000">
+       Title="MainWindow" Height="1000" Width="600">
 
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
+            <!-- menu bar   _row 0 -->
             <RowDefinition Height="20"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="20"/>
+            <!-- app name   _row 1-->
+            <RowDefinition Height="60"/>
+            <!-- rgb section_row 2 -->
+            <RowDefinition Height="30*"/> <!-- 20* -->
+            <!-- border     _row 3-->
+            <RowDefinition Height="4"/>
+            <!-- phone      _row 4-->
+            <RowDefinition Height="20*"/> <!-- 20* + 20 *-->
+            <!-- border     _row 5-->
+            <RowDefinition Height="4"/>
+            <!-- HeadPhones _row 6-->
+            <RowDefinition Height="20*"/> <!-- 20* + 20* + 15*-->
+            <!-- border     _row 7-->
+            <RowDefinition Height="4"/>
+            <!-- Watch      _row 8-->
+            <RowDefinition Height="15*"/>
+            <!-- border     _row 9-->
+            <RowDefinition Height="4"/>
+            <!-- EarPhones  _row 10-->
+            <RowDefinition Height="15*"/>
+            <!-- bottom row _row 11-->
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
+        <Border Grid.Row="3" Background="Gray" CornerRadius="10" Height="2"
+        HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        <Border Grid.Row="5" Background="Gray" CornerRadius="10" Height="2"
+        HorizontalAlignment="Stretch" VerticalAlignment="Center" Opacity="0.1"/>
+        <Border Grid.Row="7" Background="Gray" CornerRadius="10" Height="2"
+        HorizontalAlignment="Stretch" VerticalAlignment="Center" Opacity="0.1"/>
+        <Border Grid.Row="9" Background="Gray" CornerRadius="10" Height="2"
+        HorizontalAlignment="Stretch" VerticalAlignment="Center" Opacity="0.1"/>
+        
+        
         <Grid Grid.Row="0">
             <!--Menu Bar User Controls-->
             <userControls:MenuBar/>
         </Grid>
         <Grid Grid.Row="1">
+            <!--App Name User Control-->
+            <userControls:AppName/>
+        </Grid>
+        <Grid Grid.Row="2">
             <!--Color Selection User Control-->
             <userControls:ColorSelection DataContext="{Binding ColorSelectorViewModel}"/>
         </Grid>
-
-        <Grid Grid.Row="2">
+        
+        <Grid Grid.Row="4">
             <userControls:ChargingView UnpluggedDevice="PluggedPhoneTransparent"
                            PluggedDevice="PluggedPhone"
                            PluggedDevice1="PluggedPhoneBattery1"
@@ -43,7 +74,7 @@
                            PluggedDevice4="PluggedPhoneBattery1234"/>
         </Grid>
 
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="6">
             <userControls:ChargingView UnpluggedDevice="HeadPhonesTransparent"
                            PluggedDevice="HeadPhones0"
                            PluggedDevice1="HeadPhones1"
@@ -52,7 +83,7 @@
                            PluggedDevice4="HeadPhones4"/>
         </Grid>
 
-        <Grid Grid.Row="4">
+        <Grid Grid.Row="8">
             <userControls:ChargingView UnpluggedDevice="WatchTransparent"
                            PluggedDevice="Watch0"
                            PluggedDevice1="Watch1"
@@ -60,7 +91,7 @@
                            PluggedDevice3="Watch3"
                            PluggedDevice4="Watch4"/>
         </Grid>
-        <Grid Grid.Row="5">
+        <Grid Grid.Row="10">
             <userControls:ChargingView UnpluggedDevice="EarPhonesTransparent"
                    PluggedDevice="EarPhones0"
                    PluggedDevice1="EarPhones1"
@@ -70,10 +101,10 @@
         </Grid>
 
 
-        <Grid Grid.Row="6">
-            <Grid.Background>
-                <SolidColorBrush Color="Gray"/>
-            </Grid.Background>
+        <Grid Grid.Row="11">
+            <!--
+            <UserControl:BottomRow/>
+                -->
         </Grid>
 
     </Grid>

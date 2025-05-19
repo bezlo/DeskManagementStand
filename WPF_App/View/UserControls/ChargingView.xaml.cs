@@ -75,7 +75,8 @@ namespace DeskManagementStand_App.View.UserControls
         }
         private void LoadImages()
         {
-            
+            ChargingGrid.Children.Clear(); // Clear previous images
+            _images.Clear(); // Clear the list of images
             //string[] path = new string[5];
             string[] keypath = new string[6];
 
@@ -92,6 +93,10 @@ namespace DeskManagementStand_App.View.UserControls
             keypath[4] = PluggedDevice3;
             keypath[5] = PluggedDevice4;
 
+            double width = ChargingGrid.ActualWidth - 5; //* 0.95;
+            double height = ChargingGrid.ActualHeight - 5;// * 0.95;
+            double sizeImage = Math.Min(width, height);
+
             for (int i = 0; i <=5; i++)
             {
                 var drawingImage = TryFindResource(keypath[i]) as DrawingImage;
@@ -100,7 +105,9 @@ namespace DeskManagementStand_App.View.UserControls
                     var image = new Image
                     {
                         Source = drawingImage,
-                        Stretch = System.Windows.Media.Stretch.Uniform,
+                        //Stretch = System.Windows.Media.Stretch.Uniform,
+                        Width = width,
+                        Height = height,
                         HorizontalAlignment = HorizontalAlignment.Left,
                         Margin = new Thickness(2, 0, 0, 0),
                         Opacity = 0
@@ -198,6 +205,11 @@ namespace DeskManagementStand_App.View.UserControls
             }
             _storyboard.Begin();
         }
-    
+
+        private void ChargingGrid_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            LoadImages();
+            CreateAnimation_StackTransition();
+        }
     }
 }

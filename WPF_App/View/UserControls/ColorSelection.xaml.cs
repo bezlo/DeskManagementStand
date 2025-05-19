@@ -3,11 +3,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using SharpVectors.Renderers.Wpf;
-using SharpVectors.Converters;
-using Windows.System;
-using System.IO;
-using System.ComponentModel;
 
 namespace DeskManagementStand_App.View.UserControls
 {
