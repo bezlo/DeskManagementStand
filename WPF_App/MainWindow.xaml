@@ -21,15 +21,15 @@
             <!-- app name   _row 1-->
             <RowDefinition Height="60"/>
             <!-- rgb section_row 2 -->
-            <RowDefinition Height="30*"/> <!-- 20* -->
+            <RowDefinition Height="30*"/> 
             <!-- border     _row 3-->
             <RowDefinition Height="4"/>
             <!-- phone      _row 4-->
-            <RowDefinition Height="20*"/> <!-- 20* + 20 *-->
+            <RowDefinition Height="20*"/> 
             <!-- border     _row 5-->
             <RowDefinition Height="4"/>
             <!-- HeadPhones _row 6-->
-            <RowDefinition Height="20*"/> <!-- 20* + 20* + 15*-->
+            <RowDefinition Height="20*"/> 
             <!-- border     _row 7-->
             <RowDefinition Height="4"/>
             <!-- Watch      _row 8-->
@@ -66,38 +66,73 @@
         </Grid>
         
         <Grid Grid.Row="4">
-            <userControls:ChargingView UnpluggedDevice="PluggedPhoneTransparent"
-                           PluggedDevice="PluggedPhone"
-                           PluggedDevice1="PluggedPhoneBattery1"
-                           PluggedDevice2="PluggedPhoneBattery12"
-                           PluggedDevice3="PluggedPhoneBattery123"
-                           PluggedDevice4="PluggedPhoneBattery1234"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <userControls:ChargingView UnpluggedDevice="PluggedPhoneTransparent"
+               PluggedDevice="PluggedPhone"
+               PluggedDevice1="PluggedPhoneBattery1"
+               PluggedDevice2="PluggedPhoneBattery12"
+               PluggedDevice3="PluggedPhoneBattery123"
+               PluggedDevice4="PluggedPhoneBattery1234"/>
+            </Grid>
+            
         </Grid>
 
         <Grid Grid.Row="6">
-            <userControls:ChargingView UnpluggedDevice="HeadPhonesTransparent"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <userControls:ChargingView UnpluggedDevice="HeadPhonesTransparent"
                            PluggedDevice="HeadPhones0"
                            PluggedDevice1="HeadPhones1"
                            PluggedDevice2="HeadPhones2"
                            PluggedDevice3="HeadPhones3"
                            PluggedDevice4="HeadPhones4"/>
+                
+            </Grid>
+            <Grid Grid.Column="1">
+                <userControls:Profile/>
+            </Grid>
         </Grid>
 
         <Grid Grid.Row="8">
-            <userControls:ChargingView UnpluggedDevice="WatchTransparent"
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <userControls:ChargingView UnpluggedDevice="WatchTransparent"
                            PluggedDevice="Watch0"
                            PluggedDevice1="Watch1"
                            PluggedDevice2="Watch2"
                            PluggedDevice3="Watch3"
                            PluggedDevice4="Watch4"/>
-        </Grid>
+                </Grid>
+            <Grid Grid.Column="1">
+                <userControls:Rspi/>
+            </Grid>
+            </Grid>
         <Grid Grid.Row="10">
-            <userControls:ChargingView UnpluggedDevice="EarPhonesTransparent"
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <userControls:ChargingView UnpluggedDevice="EarPhonesTransparent"
                    PluggedDevice="EarPhones0"
                    PluggedDevice1="EarPhones1"
                    PluggedDevice2="EarPhones2"
                    PluggedDevice3="EarPhones3"
                    PluggedDevice4="EarPhones4"/>
+                    </Grid>
+            <Grid Grid.Column="1">
+                <userControls:Info/>
+            </Grid>
         </Grid>
 
 

@@ -39,6 +39,7 @@
                 <ResourceDictionary Source="/Resources/xaml/HeadPhones/HeadPhones3.xaml"/>
                 <ResourceDictionary Source="/Resources/xaml/HeadPhones/HeadPhones4.xaml"/>
                 <ResourceDictionary Source="/Resources/xaml/HeadPhones/HeadPhonesTransparent.xaml"/>
+                <!-- Other Icons -->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
