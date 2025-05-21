@@ -20,9 +20,43 @@ namespace DeskManagementStand_App.View.UserControls
     /// </summary>
     public partial class Info : UserControl
     {
+        public static readonly DependencyProperty IconProperty =
+        DependencyProperty.Register("Icon", typeof(string), typeof(Info), new PropertyMetadata(string.Empty));
+
+        public string Icon
+        {
+            get { return (string)GetValue(IconProperty); }
+            set { SetValue(IconProperty, value); }
+        }
         public Info()
         {
             InitializeComponent();
+            Loaded += Info_Loaded;
+        }
+        private void Info_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            // Set the image source to the icon path
+            if (!string.IsNullOrEmpty(Icon))
+            {
+                var drawingimage = TryFindResource(Icon) as DrawingImage;
+                if (drawingimage != null)
+                {
+                    double width = IconGrid.ActualWidth * 0.6; //* 0.95;
+                    double height = IconGrid.ActualHeight * 0.6;// * 0.95;
+                    double size = Math.Min(width, height);
+                    var image = new Image
+                    {
+                        Source = drawingimage,
+                        //Margin = new Thickness(5, 5, 5, 5),
+                        Width = size,
+                        Height = size,
+                        Stretch = Stretch.Uniform,
+                    };
+                    IconGrid.Children.Clear(); // Clear previous images
+                    IconGrid.Children.Add(image);
+                }
+            }
         }
     }
 }

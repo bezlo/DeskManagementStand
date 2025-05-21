@@ -5,6 +5,7 @@
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        xmlns:local="clr-namespace:DeskManagementStand_App"
        xmlns:userControls="clr-namespace:DeskManagementStand_App.View.UserControls"
+       xmlns:userControlsIcons="clr-namespace:DeskManagementStand_App.View.UserControls.IconsUserControl"
        xmlns:vm="clr-namespace:DeskManagementStand_App.ViewModel"
        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
        mc:Ignorable="d"
@@ -96,7 +97,7 @@
                 
             </Grid>
             <Grid Grid.Column="1">
-                <userControls:Profile/>
+                <userControlsIcons:IconsUserControl Icon="ProfileIcon" Command=""/>
             </Grid>
         </Grid>
 
@@ -114,7 +115,7 @@
                            PluggedDevice4="Watch4"/>
                 </Grid>
             <Grid Grid.Column="1">
-                <userControls:Rspi/>
+                <userControlsIcons:IconsUserControl Icon="RspiIcon" Command="OpenConnectionSettingsCommand"/>
             </Grid>
             </Grid>
         <Grid Grid.Row="10">
@@ -131,7 +132,7 @@
                    PluggedDevice4="EarPhones4"/>
                     </Grid>
             <Grid Grid.Column="1">
-                <userControls:Info/>
+                <userControlsIcons:IconsUserControl Icon="InfoIcon" Command=""/>
             </Grid>
         </Grid>
 

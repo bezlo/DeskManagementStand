@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:DeskManagementStand_App.View.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -13,7 +14,14 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources> 
-    <Grid>
-        <Image Source="{StaticResource rspiIcon}" Margin="20,20,20,20"/>
+    -->
+
+    <Grid x:Name="IconGrid">
+        <Button x:Name="RspiButton"
+                Width="{Binding ConnectionButtonSize}"
+                Height="{Binding ConnectionButtonSize}"
+                Command="{Binding OpenConnectionSettingsCommand}"
+                Background="Transparent"/>
     </Grid>
+    
 </UserControl>

@@ -9,13 +9,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resources\xaml_icon\**" />
+    <EmbeddedResource Remove="Resources\xaml_icon\**" />
+    <None Remove="Resources\xaml_icon\**" />
+    <Page Remove="Resources\xaml_icon\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\svg\back.svg" />
     <None Remove="Resources\svg\Desk.svg" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Resources\xaml_icon\" />
   </ItemGroup>
 
   <ItemGroup>

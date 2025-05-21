@@ -6,14 +6,7 @@
              xmlns:local="clr-namespace:DeskManagementStand_App.View.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/xaml/Icons/InfoIcon.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
-    <Grid>
-        <Image Source="{StaticResource InfoIcon}" Margin="20,20,20,20"/>
+    <Grid x:Name="IconGrid">
+        
     </Grid>
 </UserControl>
