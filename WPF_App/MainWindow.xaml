@@ -96,6 +96,7 @@
                            PluggedDevice4="HeadPhones4"/>
                 
             </Grid>
+            
             <Grid Grid.Column="1">
                 <userControlsIcons:IconsUserControl Icon="ProfileIcon" Command=""/>
             </Grid>

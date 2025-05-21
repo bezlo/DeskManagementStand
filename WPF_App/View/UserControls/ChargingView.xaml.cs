@@ -60,7 +60,31 @@ namespace DeskManagementStand_App.View.UserControls
             get => (string)GetValue(PluggedDevice4Property);
             set => SetValue(PluggedDevice4Property, value);
         }
+        public static readonly DependencyProperty VoltageProperty =
+        DependencyProperty.Register("VoltProperty", typeof(string), typeof(ChargingView), new PropertyMetadata(string.Empty));
 
+        public string Voltage
+        {
+            get { return (string)GetValue(VoltageProperty); }
+            set { SetValue(VoltageProperty, value); }
+        }
+        public static readonly DependencyProperty CurrentProperty =
+        DependencyProperty.Register("CurrentProperty", typeof(string), typeof(ChargingView), new PropertyMetadata(string.Empty));
+
+        public string Current
+        {
+            get { return (string)GetValue(CurrentProperty); }
+            set { SetValue(CurrentProperty, value); }
+        }
+        public static readonly DependencyProperty PowerProperty =
+        DependencyProperty.Register("PowerProperty", typeof(string), typeof(ChargingView), new PropertyMetadata(string.Empty));
+
+        public string Power
+        {
+            get { return (string)GetValue(PowerProperty); }
+            set { SetValue(PowerProperty, value); }
+        }
+        //###############################################################################################################################################################
         public ChargingView()
 
         {
@@ -135,7 +159,12 @@ namespace DeskManagementStand_App.View.UserControls
             //        Opacity = 0
             //    };
         }
-        
+
+        private void LoadTexts()
+        {
+
+
+        }
 
         private void CreateAnimation_SmoothTransition()
         {
