@@ -15,7 +15,9 @@
 
 ## VS Code
 .vscode/
-
+.vs/
+. vs/
+WPF_App/ .vs/
 ## NuGet packages
 *.nupkg
 packages/

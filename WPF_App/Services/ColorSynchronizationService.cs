@@ -15,7 +15,7 @@ namespace DeskManagementStand_App.Services
         public string ColorString { get; private set; } = string.Empty; // Inicjalizacja zmiennej ColorString
         public Color CurrentColor { get; private set; } = Colors.Transparent; // Inicjalizacja zmiennej CurrentColor
 
-        public event Action<Color> ColorChanged; // <- zdarzenie
+        public event Action<Color>? ColorChanged; // <- zdarzenie
         public ColorSynchronizationService(Func<Color> getColor)
         {
             

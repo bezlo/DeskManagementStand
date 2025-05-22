@@ -14,7 +14,7 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
     //##### public
     public  Color SelectedColorValue;
 
-    public event PropertyChangedEventHandler PropertyChanged;
+    public event PropertyChangedEventHandler? PropertyChanged;
     public Color SelectedColor
     {
         get => _selectedColor;

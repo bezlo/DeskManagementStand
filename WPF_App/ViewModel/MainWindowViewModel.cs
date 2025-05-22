@@ -24,7 +24,7 @@ namespace DeskManagementStand_App.ViewModel;
         }
         private void OpenConnectionSettings()
         {
-            var connectionsettingsWindow = new DeskManagementStand_App.View.UserControls.ConnectionInfo();
+            var connectionsettingsWindow = new DeskManagementStand_App.View.UserControls.ConnectionInfo(ColorSelectorViewModel);
             connectionsettingsWindow.Show(); // lub Show(), zależnie od potrzeby
         }
 

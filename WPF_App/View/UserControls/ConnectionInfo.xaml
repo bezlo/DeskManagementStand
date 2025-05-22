@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeskManagementStand_App.View.UserControls"
         xmlns:userControls="clr-namespace:DeskManagementStand_App.View.UserControls" 
-        xmlns:vm="clr-namespace:DeskManagementStand_App.ViewModel"
+        xmlns:vm="clr-namespace:DeskManagementStand_App.ViewModel" 
         mc:Ignorable="d" Background="#333333"
         Height="450" Width="800">
     <Grid>
@@ -16,8 +16,9 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" >
-            <!--Menu Bar User Controls-->
-            <userControls:MenuBar DataContext="{Binding MainWindowViewModel}"/>
+            <!--Menu Bar User Controls
+            <userControls:MenuBar />
+            -->
         </Grid>
         <Grid Grid.Row="1" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" 

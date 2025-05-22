@@ -9,10 +9,10 @@ using DeskManagementStand_App.Services;
 
 namespace DeskManagementStand_App.ViewModel;
 
-public class ConnectionInfoViewModel : INotifyPropertyChanged
+public partial class ConnectionInfoViewModel : INotifyPropertyChanged
     {
         private readonly ColorSelectorViewModel _colorSelectorViewModel;
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private TCP_ClientHandler _tcpHandler = new TCP_ClientHandler();
 
@@ -34,7 +34,7 @@ public class ConnectionInfoViewModel : INotifyPropertyChanged
             }
         }
 
-        private string _messagesFromPiText;
+        private string? _messagesFromPiText;
         public string MessagesFromPiText
         {
             get => _messagesFromPiText;
@@ -43,39 +43,43 @@ public class ConnectionInfoViewModel : INotifyPropertyChanged
                 _messagesFromPiText = value;
                 OnPropertyChanged();
             }
-    }
+        }
 
         public ConnectionInfoViewModel(ColorSelectorViewModel _colorViewModel)
         {
         _colorSelectorViewModel = _colorViewModel;
         // Initialize the TCP handler
+        // void -> async task check it
         ConnectButtonCommand = new RelayCommand(_ => Connect());
-            DisconnectButtonCommand = new RelayCommand(_ => Disconnect());
+        //ConnectButtonCommand = new RelayCommand(async _ => await Connect());
+        //ConnectButtonCommand = new RelayCommand(_ => Task.Run(() => Connect()));
+
+        DisconnectButtonCommand = new RelayCommand(_ => Disconnect());
             // Initialize the ColorSynchronizationService with the TCP handler and a lambda to get the selected color value
-            _colorSyncService = new ColorSynchronizationService(() => _colorSelectorViewModel.SelectedColor);
+            _colorSyncService = new ColorSynchronizationService(() => _colorSelectorViewModel.SelectedColorValue);
             _colorSyncService.Start();
 
-            _colorSyncService.ColorChanged += color =>
-            {
-                // Reaguj na nowy kolor 
-                _tcpHandler.SendAsync($"Nowy kolor: {color.R},{color.G},{color.B}");
-            };
+        _colorSyncService.ColorChanged += color =>
+        {
+            // Reaguj na nowy kolor 
+            _ = _tcpHandler.SendAsync($"Nowy kolor: {color.R},{color.G},{color.B}");
+        };
 
     }
 
-    protected void OnPropertyChanged([CallerMemberName] string name = null)
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
          {
              Debug.WriteLine($"Property changed: {name}");
              PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
          }
-        private async void Connect()
-        {
+    // async void was changed to async task, check it
+    private async void Connect()
+    {
+        //Task.Run(async () =>
+        //{
             try
             {
-                // Utwórz nowy handler
                 _tcpHandler = new TCP_ClientHandler();
-
-                // Zarejestruj event — ZA KAŻDYM razem po nowym utworzeniu obiektu
                 _tcpHandler.DataReceived += OnDataReceived;
 
                 await _tcpHandler.ConnectAsync("192.168.0.134", 5000);
@@ -83,13 +87,18 @@ public class ConnectionInfoViewModel : INotifyPropertyChanged
                 string message = $"Połączono z PC | {DateTime.Now:HH:mm:ss}";
                 await _tcpHandler.SendAsync(message);
 
-                StatusInfo = "Status: Połączono";
+            
+
+            StatusInfo = "Status: Połączono";
             }
             catch (Exception ex)
             {
                 StatusInfo = $"Status: Błąd połączenia - {ex.Message}";
             }
-        }
+        //});
+    }
+
+        
         public void Disconnect()
         {
             if (_tcpHandler != null)
