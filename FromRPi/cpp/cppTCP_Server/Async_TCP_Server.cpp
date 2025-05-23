@@ -2,6 +2,7 @@
 
 #include "Logger.h"
 #include "CommandDispatcher.h"
+#include "CommandParser.h"
 
 #include <ctime>
 #include <iostream>
@@ -76,6 +77,21 @@ private:
                     std::string ack = "ACK: " + received + "\n";
                     boost::asio::async_write(socket_, boost::asio::buffer(ack),
                         [this, self](boost::system::error_code /*ec*/, std::size_t /*length*/){});
+                    // #### PARSER
+                    auto [cmd, args] = CommandParser::parse(received);
+                    std::cout << "CHECK" << cmd << std::endl;
+                    if (cmd == "CMD_SET_RGB") {
+                        for (size_t i = 0; i < args.size(); ++i) {
+                            if (args[i].has_value()) {
+                                Logger::log(LogLevel::INFO, "Arg " + std::to_string(i) + ": " + std::to_string(args[i].value()));
+                            } else {
+                                Logger::log(LogLevel::WARNING, "Arg " + std::to_string(i) + " nie jest liczba");
+                            }
+                        }
+                    } else {
+                        Logger::log(LogLevel::WARNING, "Nieznana komendaxdxd: " + cmd);
+                    }
+
 
                     do_read();
                 }

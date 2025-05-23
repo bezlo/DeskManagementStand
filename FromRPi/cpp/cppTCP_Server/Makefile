@@ -6,7 +6,7 @@ CXXFLAGS = -std=c++17 -Wall -Wextra -O2
 TARGET = server
 
 # pliki zrodlowe i obiektowe
-SRCS = Async_TCP_Server.cpp Logger.cpp
+SRCS = Async_TCP_Server.cpp Logger.cpp CommandParser.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 # domyslna regula
