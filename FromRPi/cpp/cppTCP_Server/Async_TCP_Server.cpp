@@ -1,4 +1,9 @@
-  #include <ctime>
+// #### Asynsc_TCP_Server.cpp
+
+#include "Logger.h"
+#include "CommandDispatcher.h"
+
+#include <ctime>
 #include <iostream>
 #include <string>
 #include <memory>
@@ -12,6 +17,8 @@ using boost::asio::ip::tcp;
 class tcp_connection : public std::enable_shared_from_this<tcp_connection>
 {
 public:
+    CommandDispatcher dispatcher_;
+
     typedef std::shared_ptr<tcp_connection> pointer;
 
     static pointer create(boost::asio::io_service& io_service)
@@ -23,11 +30,23 @@ public:
 
     void start()
     {
+        dispatcher_.register_command("ping", [](const std::string& args) {
+    Logger::log(LogLevel::INFO, "Ping received. Args: " + args);
+});
+
+dispatcher_.register_command("say", [](const std::string& args) {
+    Logger::log(LogLevel::INFO, "Say: " + args);
+});
+
         try {
-            std::cout << "Polaczenie od: "
-                      << socket_.remote_endpoint().address().to_string()
-                      << ":" << socket_.remote_endpoint().port()
-                      << std::endl;
+            //std::cout << "Polaczenie od: "
+            //          << socket_.remote_endpoint().address().to_string()
+            //          << ":" << socket_.remote_endpoint().port()
+            //          << std::endl;
+            Logger::log(LogLevel::INFO, 
+            "Polaczenie od: " + socket_.remote_endpoint().address().to_string() + 
+             ":" + std::to_string(socket_.remote_endpoint().port()));
+
         } catch (std::exception& e) {
             std::cerr << "Blad przy pobieraniu informacji o kliencie: " << e.what() << std::endl;
         }
@@ -49,7 +68,10 @@ private:
                 if (!ec)
                 {
                     std::string received(read_buf_, length);
-                    std::cout << "[Odebrano] >" << received << "\n";
+                    //std::cout << "[Odebrano] >" << received << "\n";
+                    Logger::log(LogLevel::INFO, "Odebrano: " + received);
+                    dispatcher_.dispatch(received);
+
 
                     std::string ack = "ACK: " + received + "\n";
                     boost::asio::async_write(socket_, boost::asio::buffer(ack),
@@ -59,7 +81,8 @@ private:
                 }
                 else
                 {
-                    std::cerr << "[Blad odczytu] " << ec.message() << std::endl;
+                    //std::cerr << "[Blad odczytu] " << ec.message() << std::endl;
+                    Logger::log(LogLevel::ERROR, "Blad odczytu: " + ec.message());
                 }
             });
     }
@@ -137,6 +160,8 @@ private:
 
 int main()
 {
+    Logger::setLogFile("server.log");
+
     try
     {
         boost::asio::io_service io_service;
@@ -147,5 +172,6 @@ int main()
     {
         std::cerr << e.what() << std::endl;
     }
+
     return 0;
 }
