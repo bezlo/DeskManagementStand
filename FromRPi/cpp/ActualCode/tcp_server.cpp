@@ -1,5 +1,7 @@
 #include "tcp_server.h"
 
+#include <functional>
+
 using boost::asio::ip::tcp;
 
 tcp_server::tcp_server(boost::asio::io_service& io_service)
@@ -11,7 +13,9 @@ tcp_server::tcp_server(boost::asio::io_service& io_service)
 void tcp_server::start_accept()
 {
     tcp_connection::pointer new_connection = tcp_connection::create(io_service_);
-
+    
+    new_connection->set_rgb_callback(rgb_callback);
+    
     acceptor_.async_accept(new_connection->socket(),
         [this, new_connection](const boost::system::error_code& error) {
             handle_accept(new_connection, error);
@@ -26,4 +30,9 @@ void tcp_server::handle_accept(tcp_connection::pointer new_connection,
     }
 
     start_accept();
+}
+
+void tcp_server::set_rgb_callback(std::function<void(int,int,int)> callback)
+{
+    rgb_callback = std::move(callback);
 }

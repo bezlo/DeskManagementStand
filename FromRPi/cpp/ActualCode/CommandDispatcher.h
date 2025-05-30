@@ -1,13 +1,21 @@
 #pragma once
-#include "Command.h"
+
 #include <string>
 #include <unordered_map>
 #include <functional>
+#include <vector>
+#include <memory>
+
 #include "Logger.h"
+#include "Command.h"
+#include "IDataListener.h"
+
 
 class CommandDispatcher {
 public:
     using CommandHandler = std::function<void(const std::vector<std::optional<int>>& args)>;
+    
+    
 
     void register_command(const std::string& name, CommandHandler handler) {
         handlers_[name] = handler;
@@ -16,6 +24,7 @@ public:
     void dispatch(const Command& cmd) const {
         auto it = handlers_.find(cmd.name);
         if (it != handlers_.end()) {
+            // wywolanie funkcji ktora zapisalismy w lamdzie
             it -> second(cmd.args);
         } else {
             Logger::log(LogLevel::WARNING, "Nieznana komenda: " + cmd.name);
@@ -34,7 +43,16 @@ public:
         }
         */
     }
+    
+    //void register_listener(IDataListener* l) {
+    //   listeners_.push_back(l);
+    //}
+    
+    //void notify_all(const Command& cmd) {
+    //    for (auto l : listeners_) l->onDataReceived(cmd);
+    //}
 
 private:
     std::unordered_map<std::string, CommandHandler> handlers_;
+    //std::vector<IDataListener*> listeners_;
 };

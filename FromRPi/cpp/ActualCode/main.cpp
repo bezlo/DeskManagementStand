@@ -13,10 +13,15 @@ int main() {
     try {
         boost::asio::io_service io_service;
         tcp_server server(io_service);
-        io_service.run();
+        
+        server.set_rgb_callback([](int r,int g,int b)
+        {std::cout <<"[CALLBACK]"<<" RGB:" << r <<","<<g<<","<<b<< std::endl;});
         
         RGBStrip strip;      // uzyje wartosci domyslnych
         strip.testRGB();
+        
+        io_service.run();
+        
     }
     catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;

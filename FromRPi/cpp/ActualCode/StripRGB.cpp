@@ -1,9 +1,12 @@
 //Strip_RGB_WS2812b.cpp
 //led tape
 #include "StripRGB.h"
+
 #include <stdexcept>   // std::runtime_error
 #include <unistd.h>    // sleep()
 #include <cstring>
+#include <sstream>
+#include <bitset>
 
 RGBStrip::RGBStrip(int target_freq,
 				   int gpio_pin,
@@ -57,4 +60,18 @@ void RGBStrip::testRGB()
     ws2811_render(&leds_string_);
 
     ws2811_fini(&leds_string_);
+}
+
+//void RGBStrip::onDataReceived(const ParsedData& data)  override {setColor(d.r, d.g, d.b);}
+
+
+void RGBStrip::setColor(int r, int g, int b)
+{
+    // 0xRRGGBB
+    uint32_t rgbColor = (r << 16) | (g << 8) | b;
+    
+    for (int i = 0; i < ledCount_; i++)
+    {leds_string_.channel[0].leds[i] = rgbColor;}
+    
+    ws2811_render(&leds_string_);
 }

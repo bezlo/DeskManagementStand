@@ -4,6 +4,7 @@
 #include <thread>
 #include <chrono>
 #include <ctime>
+#include <functional>
 
 using namespace std::chrono_literals;
 
@@ -11,10 +12,14 @@ tcp_connection::tcp_connection(boost::asio::io_service& io_service)
     : socket_(io_service) {}
 
 tcp_connection::pointer tcp_connection::create(boost::asio::io_service& io_service)
+                                               //std::function<void(int,int,int)> rgbcallback)
 {
-    auto conn = pointer(new tcp_connection(io_service));
-    conn->setup_commands();
-    return conn;
+    //auto connPtr = std::shared_ptr<tcp_connection>( new tcp_connection(io_service) );
+
+    auto connectionPtr = pointer(new tcp_connection(io_service));
+    connectionPtr->setup_commands();
+    //connectionPtr->set_rgb_callback(std::move(rgb_callback));
+    return connectionPtr;
 }
 
 tcp::socket& tcp_connection::socket() { return socket_; }
@@ -35,11 +40,16 @@ void tcp_connection::start()
 
 void tcp_connection::setup_commands()
 {
+    // #### create lamba to handlers map
     dispatcher_.register_command("CMD_SET_RGB", [this](const std::vector<std::optional<int>>& args) {
         if (args.size() >= 3 && args[0] && args[1] && args[2]) {
+            
             int r = *args[0], g = *args[1], b = *args[2];
+            
             Logger::log(LogLevel::INFO, "RGB was set as: (" +
                 std::to_string(r) + ", " + std::to_string(g) + ", " + std::to_string(b) + ")");
+            if(rgb_callback) 
+            {rgb_callback(r,g,b);}
         } else {
             Logger::log(LogLevel::WARNING, "Usage: CMD_SET_RGB,<r>,<g>,<b>");
         }
@@ -57,8 +67,9 @@ void tcp_connection::do_read()
                 Logger::log(LogLevel::INFO, "Odebrano: " + received);
 
                 Command cmd = CommandParser::parse(received);
+                // check if this command is set up
                 dispatcher_.dispatch(cmd);
-
+                //################## DATA DATA DATA #################################
                 std::string ack = "ACK: " + received + "\n";
 
                 boost::asio::async_write(socket_, boost::asio::buffer(ack),
@@ -100,4 +111,9 @@ std::string tcp_connection::make_time_string()
     char buf[64];
     strftime(buf, sizeof(buf), "%H:%M:%S", localtime(&now));
     return std::string(buf);
+}
+
+void tcp_connection::set_rgb_callback(std::function<void(int,int,int)> callback)
+{
+    rgb_callback = std::move(callback);
 }
