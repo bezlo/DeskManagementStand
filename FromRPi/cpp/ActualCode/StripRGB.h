@@ -29,7 +29,8 @@ class RGBStrip //: public IDataListener
 		//void onDataReceived(const ParsedData& d);
 		
 		void setColor(int r, int g, int b);
-		
+		void effectRainbow();
+
 	private:
 		int clear_on_exit = 0;
 		int ledCount_;

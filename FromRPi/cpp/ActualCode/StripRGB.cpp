@@ -75,3 +75,29 @@ void RGBStrip::setColor(int r, int g, int b)
     
     ws2811_render(&leds_string_);
 }
+
+void RGBStrip::effectRainbow()
+{
+//rainbow colors
+	uint8_t RainbowColors[21][3] = {
+		{15, 57, 35}, {79, 151, 55}, {192, 255, 2}, {253, 195, 0},
+		{209, 108, 30}, {255, 120, 0}, {250, 55, 44}, {142, 0, 45},
+		{188, 21, 125}, {111, 18, 102}, {217, 86, 122}, {255, 114, 195},
+		{149, 104, 196}, {144, 60, 212}, {75, 0, 130}, {7, 0, 86},
+		{65, 91, 132}, {42, 120, 187}, {99, 206, 242}, {0, 230, 230},
+		{3, 124, 110}
+	};
+    while (true)
+    {
+		setColor(RainbowColors[i][0], RainbowColors[i][1], RainbowColors[i][2]);
+        
+        i++;
+		if (i >= RainbowColors.size())
+		{
+			i = 0; // reset index to loop through colors again
+		}
+
+        sleel(1); // wait one second
+    }
+	
+}
