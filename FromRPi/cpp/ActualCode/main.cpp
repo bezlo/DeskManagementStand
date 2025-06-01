@@ -10,15 +10,20 @@
 
 int main() {
     Logger::setLogFile("server.log");
+    int RGB[3] = {0,0,0};
     try {
         boost::asio::io_service io_service;
         tcp_server server(io_service);
         
-        server.set_rgb_callback([](int r,int g,int b)
-        {std::cout <<"[CALLBACK]"<<" RGB:" << r <<","<<g<<","<<b<< std::endl;});
+        RGBStrip strip;
         
-        RGBStrip strip;      // uzyje wartosci domyslnych
-        strip.testRGB();
+        server.set_rgb_callback([&RGB, &strip](int r,int g,int b)
+        {std::cout <<"[CALLBACK]"<<" RGB:" << r <<","<<g<<","<<b<< std::endl;
+            RGB[0] = r;
+            RGB[1] = g;
+            RGB[2] = b;
+            strip.setColor(RGB[0],RGB[1],RGB[2]);
+        });
         
         io_service.run();
         

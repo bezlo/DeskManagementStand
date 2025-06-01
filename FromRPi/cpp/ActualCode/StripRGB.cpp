@@ -2,6 +2,7 @@
 //led tape
 #include "StripRGB.h"
 
+#include <cstdint>
 #include <stdexcept>   // std::runtime_error
 #include <unistd.h>    // sleep()
 #include <cstring>
@@ -87,17 +88,18 @@ void RGBStrip::effectRainbow()
 		{65, 91, 132}, {42, 120, 187}, {99, 206, 242}, {0, 230, 230},
 		{3, 124, 110}
 	};
+	long unsigned int i = 0;
     while (true)
     {
 		setColor(RainbowColors[i][0], RainbowColors[i][1], RainbowColors[i][2]);
         
         i++;
-		if (i >= RainbowColors.size())
+		if (i >= sizeof(RainbowColors))
 		{
 			i = 0; // reset index to loop through colors again
 		}
 
-        sleel(1); // wait one second
+        sleep(1); // wait one second
     }
 	
 }
