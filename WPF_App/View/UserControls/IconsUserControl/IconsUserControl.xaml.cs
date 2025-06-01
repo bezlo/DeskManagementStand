@@ -53,8 +53,9 @@ namespace DeskManagementStand_App.View.UserControls.IconsUserControl
             }
 
             IconGrid.Children.Add(IconButton);
-            IconButton.Height = Math.Min(IconGrid.ActualWidth, IconGrid.ActualHeight) * 0.6;
-            IconButton.Width = Math.Min(IconGrid.ActualWidth, IconGrid.ActualHeight) * 0.6;
+            IconButton.Height = Math.Min(IconGrid.ActualWidth, IconGrid.ActualHeight) * 0.75;
+            IconButton.Width = Math.Min(IconGrid.ActualWidth, IconGrid.ActualHeight) * 0.75;
+
             // Założenie: DataContext jest ustawiony i zawiera właściwość OpenConnectionSettingsCommand
             if (!string.IsNullOrEmpty(Command))
             { 

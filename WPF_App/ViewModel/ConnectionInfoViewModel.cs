@@ -62,7 +62,10 @@ public partial class ConnectionInfoViewModel : INotifyPropertyChanged
         _colorSyncService.ColorChanged += color =>
         {
             // Reaguj na nowy kolor 
-            _ = _tcpHandler.SendAsync($"Nowy kolor: {color.R},{color.G},{color.B}");
+            _ = _tcpHandler.SendAsync($"CMD_SET_RGB,{color.R},{color.G},{color.B},");
+            // to do effects like raninbow, breathe etc
+            // to do read value of voltage, current , power
+
         };
 
     }

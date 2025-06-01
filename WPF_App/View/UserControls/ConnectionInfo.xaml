@@ -23,10 +23,10 @@
         <Grid Grid.Row="1" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" 
                         Height="60" Width="600">
-                <Button x:Name="ConnectButton" Content="Connect with rspi" Style="{StaticResource PrimaryButton}" Padding="10,5"
+                <Button x:Name="ConnectButton" Content="Connect with rspi" Style="{StaticResource NormalButtonStyle}" Padding="10,5"
                         Height="60" Width="250" Margin="10,0,0,0" 
                         Command="{Binding ConnectButtonCommand}" />
-                <Button x:Name="DisconnectButton" Content="Disconnect with rspi" Style="{StaticResource DangerButton}" Padding="10,5"
+                <Button x:Name="DisconnectButton" Content="Disconnect with rspi" Style="{StaticResource DangerButtonStyle}" Padding="10,5"
                         Height="60" Width="250" Margin="80,0,0,0" 
                         Command="{Binding DisconnectButtonCommand}"/>
             </StackPanel>

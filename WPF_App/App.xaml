@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
                 <ResourceDictionary Source="Styles/DangerButtonStyle.xaml"/>
                 <ResourceDictionary Source="Styles/NormalButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/HiddenButtonStyle.xaml"/>
                 <!-- Images charging phone -->
                 <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneTransparent.xaml"/>
                 <ResourceDictionary Source="/Resources/xaml/Phone/UnpluggedPhone.xaml"/>
