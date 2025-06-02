@@ -51,7 +51,8 @@
         HorizontalAlignment="Stretch" VerticalAlignment="Center" Opacity="0.1"/>
         <Border Grid.Row="9" Background="Gray" CornerRadius="10" Height="2"
         HorizontalAlignment="Stretch" VerticalAlignment="Center" Opacity="0.1"/>
-        
+        <Border Grid.Row="10" Background="Gray" CornerRadius="10" Height="2"
+        HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
         
         <Grid Grid.Row="0">
             <!--Menu Bar User Controls-->

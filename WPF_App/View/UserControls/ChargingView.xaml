@@ -21,14 +21,26 @@
         <Grid x:Name="ChargingTextGrid" Grid.Column="1">
             <StackPanel Orientation="Horizontal" Margin="10">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock x:Name="Test" 
-                               Text="TESTTESTTEST" 
+                    <TextBlock x:Name="Test1" 
+                               Text="1.23" 
                                FontSize="20" 
                                Foreground="Black" 
                                HorizontalAlignment="Center" 
                                VerticalAlignment="Center"/>
+                    <TextBlock x:Name="Test2" 
+            Text="3.3" 
+            FontSize="20" 
+            Foreground="Black" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"/>
+                    <TextBlock x:Name="Test3" 
+            Text="4.059" 
+            FontSize="20" 
+            Foreground="Black" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"/>
                     <TextBlock x:Name="TextBlockVoltage" 
-                               Text="{Binding ChargingTextVoltage}" 
+                               Text="{Binding ChargingTextVoltage, StringFormat={}{0} [V]}"
                                FontSize="20" 
                                Foreground="Black" 
                                HorizontalAlignment="Center" 

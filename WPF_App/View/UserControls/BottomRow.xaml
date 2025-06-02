@@ -12,22 +12,23 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
+        
         <Grid Grid.Column="0">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Autors" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="Autors" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                Margin="10,0,0,0"  FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBlock Text="Autors:" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="Autors:" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBlock Text="Autors:" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="Autors:" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Text="" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                             Margin="10,0,0,0"  FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBlock Text="Sebastian Danielczyk (bezlo)" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="Sebastian Danielczyk (bezlo)" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                             Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBlock Text="Design and Graphics - avimmimo" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="Design and Graphics - avimmimo" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                             Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
@@ -37,19 +38,19 @@
         <Grid Grid.Column="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Text="" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                         Margin="10,0,0,0"  FontSize="12" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBlock Text="Version:" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="Version:" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                         Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBlock Text="Release Date:" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="Release Date:" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                         Margin="10,0,0,0"  FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Text="" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                         Margin="10,0,10,0"  FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBlock Text="1.0.0" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="1.0.0" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                         Margin="10,0,10,0"  FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <TextBlock Text="19.05.2025" Foreground="DarkViolet" Opacity="0.4"
+                    <TextBlock Text="19.05.2025" Foreground="{StaticResource PrimaryTextColor}" Opacity="0.4"
                         Margin="10,0,10,0"  FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 </StackPanel>
             </StackPanel>

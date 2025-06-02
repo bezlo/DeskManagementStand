@@ -6,11 +6,13 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!-- Colors -->
+                <ResourceDictionary Source="Resources/Colors/Colors.xaml"/>
                 <!-- Styles -->
-                <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
-                <ResourceDictionary Source="Styles/DangerButtonStyle.xaml"/>
-                <ResourceDictionary Source="Styles/NormalButtonStyle.xaml"/>
-                <ResourceDictionary Source="Styles/HiddenButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/Buttons/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Styles/Buttons/DangerButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/Buttons/NormalButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/Buttons/HiddenButtonStyle.xaml"/>
                 <!-- Images charging phone -->
                 <ResourceDictionary Source="/Resources/xaml/Phone/PluggedPhoneTransparent.xaml"/>
                 <ResourceDictionary Source="/Resources/xaml/Phone/UnpluggedPhone.xaml"/>
