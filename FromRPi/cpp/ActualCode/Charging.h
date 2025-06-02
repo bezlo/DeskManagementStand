@@ -1,4 +1,6 @@
 //Charging.h
+#ifndef CHARGING_H
+#define CHARGING_H
 #include <string>
 
 
@@ -9,6 +11,7 @@ class Charging
 	struct ChargingParameters
 	{
 		std::string DeviceName;
+		bool OnOff;
 		double Voltage;
 		double Current;
 		double Power;
@@ -28,3 +31,4 @@ class Charging
 	Charging();
 	void ReadHardwareData();
 };
+#endif

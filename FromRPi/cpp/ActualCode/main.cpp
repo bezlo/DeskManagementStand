@@ -7,18 +7,25 @@
 #include <boost/asio.hpp>
 #include <iostream>
 #include <exception>
+#include <thread>
 
 int main() {
     Logger::setLogFile("server.log");
-    int RGB[3] = {0,0,0};
+    //int RGB[3] = {0,0,0};
     try {
         //create io_service and server TCP
         boost::asio::io_service io_service;
         tcp_server server(io_service);
         // run network thread (asio loop)
-        
-        
-        
+        std::thread asioThread([&](){
+            io_service.run();
+        });
+        // create and run
+        ChargingPublisher chargingpublisher(io_service, server);
+        publisher.start();
+        // wait for end (never)
+        asioThread.join();
+        publisher.stop();
         /* OLD WORKING VERSION
         RGBStrip strip;
         

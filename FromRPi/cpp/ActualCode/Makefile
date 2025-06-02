@@ -11,7 +11,7 @@ LDLIBS	 = -lws2811 -lm
 TARGET = DeskManagementStand
 
 # pliki zrodlowe i obiektowe
-SRCS = Logger.cpp CommandParser.cpp tcp_server.cpp tcp_connection.cpp StripRGB.cpp main.cpp
+SRCS = Logger.cpp CommandParser.cpp tcp_server.cpp tcp_connection.cpp StripRGB.cpp Charging.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 # domyslna regula
