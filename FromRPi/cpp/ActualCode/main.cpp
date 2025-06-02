@@ -1,8 +1,8 @@
 // main.cpp
-#include "StripRGB.h"
-
 #include "Logger.h"
 #include "tcp_server.h"
+#include "StripRGB.h"
+#include "Charging.h"
 
 #include <boost/asio.hpp>
 #include <iostream>
@@ -12,9 +12,14 @@ int main() {
     Logger::setLogFile("server.log");
     int RGB[3] = {0,0,0};
     try {
+        //create io_service and server TCP
         boost::asio::io_service io_service;
         tcp_server server(io_service);
+        // run network thread (asio loop)
         
+        
+        
+        /* OLD WORKING VERSION
         RGBStrip strip;
         
         server.set_rgb_callback([&RGB, &strip](int r,int g,int b)
@@ -26,7 +31,7 @@ int main() {
         });
         
         io_service.run();
-        
+        */
     }
     catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
