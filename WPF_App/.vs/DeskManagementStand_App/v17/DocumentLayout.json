@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\services\\messageparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:services\\messageparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\viewmodel\\connectioninfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:viewmodel\\connectioninfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\viewmodel\\colorselectorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:viewmodel\\colorselectorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\models\\devicedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:models\\devicedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\services\\commanddispatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:services\\commanddispatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\services\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:services\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\viewmodel\\chargingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:viewmodel\\chargingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\services\\colorsynchronizationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,11 +54,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DeviceData.cs",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Models\\DeviceData.cs",
+              "RelativeDocumentMoniker": "Models\\DeviceData.cs",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Models\\DeviceData.cs",
+              "RelativeToolTip": "Models\\DeviceData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:26:21.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ColorSelectorViewModel.cs",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ColorSelectorViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ColorSelectorViewModel.cs",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ColorSelectorViewModel.cs",
+              "RelativeToolTip": "ViewModel\\ColorSelectorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T14:24:13.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Logger.cs",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\Logger.cs",
+              "RelativeDocumentMoniker": "Services\\Logger.cs",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\Logger.cs",
+              "RelativeToolTip": "Services\\Logger.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:58:05.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CommandDispatcher.cs",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\CommandDispatcher.cs",
+              "RelativeDocumentMoniker": "Services\\CommandDispatcher.cs",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\CommandDispatcher.cs",
+              "RelativeToolTip": "Services\\CommandDispatcher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:35:55.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MessageParser.cs",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\MessageParser.cs",
+              "RelativeDocumentMoniker": "Services\\MessageParser.cs",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\MessageParser.cs",
+              "RelativeToolTip": "Services\\MessageParser.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAswFIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:35:40.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChargingViewModel.cs",
+              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ChargingViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ChargingViewModel.cs",
+              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ChargingViewModel.cs",
+              "RelativeToolTip": "ViewModel\\ChargingViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:29:59.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ChargingParametersService.cs",
               "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\ChargingParametersService.cs",
               "RelativeDocumentMoniker": "Services\\ChargingParametersService.cs",
@@ -42,38 +144,37 @@
               "RelativeToolTip": "Services\\ChargingParametersService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T11:18:26.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T11:18:26.176Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "ColorSynchronizationService.cs",
               "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\ColorSynchronizationService.cs",
               "RelativeDocumentMoniker": "Services\\ColorSynchronizationService.cs",
               "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\ColorSynchronizationService.cs",
               "RelativeToolTip": "Services\\ColorSynchronizationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T11:15:35.072Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ConnectionInfoViewModel.cs",
               "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ConnectionInfoViewModel.cs",
               "RelativeDocumentMoniker": "ViewModel\\ConnectionInfoViewModel.cs",
               "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ConnectionInfoViewModel.cs",
               "RelativeToolTip": "ViewModel\\ConnectionInfoViewModel.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAmwHQAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAAwHkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T11:14:22.26Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "ColorSelection.xaml.cs",
               "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\View\\UserControls\\ColorSelection.xaml.cs",
               "RelativeDocumentMoniker": "View\\UserControls\\ColorSelection.xaml.cs",
@@ -81,12 +182,11 @@
               "RelativeToolTip": "View\\UserControls\\ColorSelection.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T11:12:36.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T11:12:36.367Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "ColorSelection.xaml",
               "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\View\\UserControls\\ColorSelection.xaml",
               "RelativeDocumentMoniker": "View\\UserControls\\ColorSelection.xaml",

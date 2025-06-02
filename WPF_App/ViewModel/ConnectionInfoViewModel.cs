@@ -17,6 +17,9 @@ public partial class ConnectionInfoViewModel : INotifyPropertyChanged
         private TCP_ClientHandler _tcpHandler = new TCP_ClientHandler();
 
         private readonly ColorSynchronizationService _colorSyncService;
+        private readonly MessageParser _messageParser = new MessageParser(); // <- parser do komunikacji z innymi klasami
+
+        //public event Action<string> MessageReceived; // <- zdarzenie do komunikacji z innymi klasami
         public ObservableCollection<string> MessagesFromPi { get; } = new ObservableCollection<string>();
         //public string MessagesFromPiText => string.Join(Environment.NewLine, MessagesFromPi);
         public ICommand ConnectButtonCommand { get; }
@@ -114,13 +117,13 @@ public partial class ConnectionInfoViewModel : INotifyPropertyChanged
 
         private void OnDataReceived(string message)
         {
-            // Upewnij się, że operujesz na wątku UI
-            //Dispatcher.Invoke(() =>
-            //{
-            AddMessageFromPi("[Odebrano z Pi] " + message + "\n");
-            //MessagesTextBox.AppendText("[Odebrano z Pi] " + message + "\n");
-            //MessagesTextBox.ScrollToHome();
-            //});
+        //Call Message Parser
+        //Call Logger??
+        //Call CommandDispatcher
+        _messageParser.Parse(message);
+        
+        AddMessageFromPi("[Odebrano z Pi] " + message + "\n");
+            
         }
         public void AddMessageFromPi(string message)
         {

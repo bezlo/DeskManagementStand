@@ -9,9 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Model\**" />
     <Compile Remove="Resources\xaml_icon\**" />
+    <EmbeddedResource Remove="Model\**" />
     <EmbeddedResource Remove="Resources\xaml_icon\**" />
+    <None Remove="Model\**" />
     <None Remove="Resources\xaml_icon\**" />
+    <Page Remove="Model\**" />
     <Page Remove="Resources\xaml_icon\**" />
   </ItemGroup>
 
@@ -21,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Styles\TextBlock\" />
   </ItemGroup>
 
