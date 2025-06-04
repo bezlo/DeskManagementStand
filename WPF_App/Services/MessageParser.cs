@@ -3,7 +3,7 @@ using DeskManagementStand_App.Models;
 
 namespace DeskManagementStand_App.Services
 {
-    internal class MessageParser : INotifyPropertyChanged
+    public class MessageParser : INotifyPropertyChanged
     {
         private bool _initialized = false;
 

@@ -17,6 +17,7 @@ public partial class ConnectionInfoViewModel : INotifyPropertyChanged
         private TCP_ClientHandler _tcpHandler = new TCP_ClientHandler();
 
         private readonly ColorSynchronizationService _colorSyncService;
+
         private readonly MessageParser _messageParser = new MessageParser(); // <- parser do komunikacji z innymi klasami
 
         //public event Action<string> MessageReceived; // <- zdarzenie do komunikacji z innymi klasami

@@ -2,13 +2,14 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
+using DeskManagementStand_App.Services;
 
 namespace DeskManagementStand_App.View.UserControls
 {
-
     public partial class ChargingView : UserControl
     {
+        public MessageParser Parser { get; set; }
+
         private List<Image> _images = new();
         private Storyboard _storyboard;
 
@@ -60,6 +61,8 @@ namespace DeskManagementStand_App.View.UserControls
             get => (string)GetValue(PluggedDevice4Property);
             set => SetValue(PluggedDevice4Property, value);
         }
+        // just an IDEA, but probably its not the best solution
+        /*
         public static readonly DependencyProperty VoltageProperty =
         DependencyProperty.Register("VoltProperty", typeof(string), typeof(ChargingView), new PropertyMetadata(string.Empty));
 
@@ -84,11 +87,13 @@ namespace DeskManagementStand_App.View.UserControls
             get { return (string)GetValue(PowerProperty); }
             set { SetValue(PowerProperty, value); }
         }
+        */
         //###############################################################################################################################################################
         public ChargingView()
-
         {
             InitializeComponent();
+            Parser = new MessageParser();
+            this.DataContext = Parser; // Set the DataContext to the MessageParser instance
             this.Loaded += ChargingView_Loaded;
         }
         private void ChargingView_Loaded(object sender, RoutedEventArgs e)

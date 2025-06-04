@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DeskManagementStand_App.View.UserControls"
+             xmlns:Model="clr-namespace:DeskManagementStand_App.Services"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="800">
     <Grid>
@@ -21,6 +22,7 @@
         <Grid x:Name="ChargingTextGrid" Grid.Column="1">
             <StackPanel Orientation="Horizontal" Margin="10">
                 <StackPanel Orientation="Vertical">
+                    <!--
                     <TextBlock x:Name="Test1" 
                                Text="1.23" 
                                FontSize="20" 
@@ -39,20 +41,23 @@
             Foreground="Black" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center"/>
-                    <TextBlock x:Name="TextBlockVoltage" 
-                               Text="{Binding ChargingTextVoltage, StringFormat={}{0} [V]}"
-                               FontSize="20" 
-                               Foreground="Black" 
-                               HorizontalAlignment="Center" 
-                               VerticalAlignment="Center"/>
+                    -->
+                    <TextBlock x:Name="TextBlockVoltage"
+                               Text="{Binding PhoneData.Voltage}"
+                                FontSize="20" 
+                                Foreground="Black" 
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"/>
+                               <!--Text="{Binding PhoneData.Voltage, StringFormat={}{0} [V]}"-->       
+                                
                     <TextBlock x:Name="TextBlockCurrent" 
-                               Text="{Binding ChargingTextCurrent}" 
+                               Text="{Binding PhoneData.Current}" 
                                FontSize="20" 
                                Foreground="Black" 
                                HorizontalAlignment="Center" 
                                VerticalAlignment="Center"/>
                     <TextBlock x:Name="TextBlockPower" 
-                               Text="{Binding ChargingTextPower}" 
+                               Text="{Binding PhoneData.Power}" 
                                FontSize="20" 
                                Foreground="Black" 
                                HorizontalAlignment="Center" 

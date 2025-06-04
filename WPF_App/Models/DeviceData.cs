@@ -2,7 +2,7 @@
 
 namespace DeskManagementStand_App.Models
 {
-    internal class DeviceData : INotifyPropertyChanged
+    public class DeviceData : INotifyPropertyChanged
     {
         private string _deviceType;
         public string DeviceType
