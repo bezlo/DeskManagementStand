@@ -60,23 +60,40 @@ namespace DeskManagementStand_App.Services
             // example message "CMD_GET_DATA;PHONE;5;3;15"
             Logger logger = new Logger();
 
-            if (string.IsNullOrEmpty(message))
-            { throw new ArgumentException("Message cannot be null or empty"); }
-
-            string[] messageParts = message.Split(';');
-            if (messageParts.Length < 1)
-            { throw new ArgumentException("Message must contain at least a command"); }
-
-            string Command = messageParts[0].Trim();
-
-            switch (Command)
+            try
             {
-                case "CMD_GET_DATA":
-                    logger.Log(Logger.LogLevel.INFO, $"Parsing command: {Command}");
-                    ParseCMD_GET_DATA(messageParts);
-                    break;
-                default:
-                    throw new NotSupportedException($"Command '{Command}' is not supported");
+                if (string.IsNullOrEmpty(message))
+                { throw new ArgumentException("Message cannot be null or empty"); }
+
+                string[] messageParts = message.Split(';');
+                if (messageParts.Length < 1)
+                {
+                    throw new ArgumentException("Message must contain at least a command");
+                }
+
+                string Command = messageParts[0].Trim();
+
+                switch (Command)
+                {
+                    case "CMD_GET_DATA":
+                        logger.Log(Logger.LogLevel.INFO, $"Parsing command: {Command}");
+                        ParseCMD_GET_DATA(messageParts);
+                        break;
+                    default:
+                        throw new NotSupportedException($"Command '{Command}' is not supported");
+                }
+            }
+            catch (ArgumentException argEx)
+            {
+                logger.Log(Logger.LogLevel.ERROR, $"Błąd argumentu w MessageParser.Parse: {argEx.Message}");
+            }
+            catch (NotSupportedException notSupEx)
+            {
+                logger.Log(Logger.LogLevel.WARNING, $"Nieobsługiwana komenda w MessageParser.Parse: {notSupEx.Message}");
+            }
+            catch (Exception ex)
+            {
+                logger.Log(Logger.LogLevel.ERROR, $"Nieoczekiwany błąd w MessageParser.Parse: {ex.Message}");
             }
         }
 
