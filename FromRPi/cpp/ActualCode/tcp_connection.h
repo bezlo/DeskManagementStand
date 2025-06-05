@@ -14,9 +14,9 @@ using boost::asio::ip::tcp;
 class tcp_connection : public std::enable_shared_from_this<tcp_connection>
 {
 public:
-    using pointer = std::shared_ptr<tcp_connection>;
+    using conn_pointer = std::shared_ptr<tcp_connection>;
     
-    static pointer create(boost::asio::io_service& io_service);
+    static conn_pointer create(boost::asio::io_service& io_service);
                           //std::function<void(int,int,int)> rgbcallback);
 
     tcp::socket& socket();

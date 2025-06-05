@@ -20,13 +20,35 @@ int main() {
         std::thread asioThread([&](){
             io_service.run();
         });
-        // create and run
-        ChargingPublisher chargingpublisher(io_service, server);
-        publisher.start();
-        // wait for end (never)
-        asioThread.join();
-        publisher.stop();
-        /* OLD WORKING VERSION
+        
+
+     int i = 0; // atomic for sure data
+        std::thread sendsmth([&](){
+            while(true){
+                if(i >= 5){
+                    i=0;
+                }
+                std::string msg = std::to_string(i) + "\n";
+
+                //for all connections
+                server -> broadcast(msg);
+                //for specific connections
+                /*
+                auto conns = server->getActiveConnections();
+                if(!conns.empty()){
+                    auto first_conn = conns.front();
+                    io_service.post([first_conn,msg]() {
+                        first_conn->sendMessage(msg);
+                    });
+                }
+                */
+                std::this_thread::sleep_for(std::chrono::seconds(3));
+            }
+        })
+
+
+
+
         RGBStrip strip;
         
         server.set_rgb_callback([&RGB, &strip](int r,int g,int b)
@@ -37,8 +59,6 @@ int main() {
             strip.setColor(RGB[0],RGB[1],RGB[2]);
         });
         
-        io_service.run();
-        */
     }
     catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;

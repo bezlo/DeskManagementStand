@@ -18,6 +18,12 @@ public:
 
     void set_rgb_callback(std::function<void(int,int,int)> callback);
 
+    std::vector<tcp_connection::conn_pointer> getActiveConnections() const {
+        return connections_;
+    }
+    //broadcast for more connected device, like pC app and mobile app
+    void broadcast(const std::string& msg);
+    }
 private:
     void start_accept();
     void handle_accept(tcp_connection::pointer new_connection, const boost::system::error_code& error);
@@ -26,4 +32,6 @@ private:
     boost::asio::ip::tcp::acceptor acceptor_;
     
     std::function<void(int,int,int)> rgb_callback;
+
+    std::vector<tcp_connection::conn_pointer> connections_;
 };

@@ -1,3 +1,4 @@
+//tcp_connection.cpp
 #include "tcp_connection.h"
 
 #include <iostream>
@@ -80,6 +81,20 @@ void tcp_connection::do_read()
                 Logger::log(LogLevel::ERROR, "Blad odczytu: " + ec.message());
             }
         });
+}
+
+void tcp_connection::sendMessage(const std::string& msg)
+{
+    auto self = shared_from_this();
+        boost::asio::async_write(
+            socket_,
+            boost::asio::buffer(msg),
+            [this, self](boost::system::error_code ec, std::size_t /*length*/) {
+                if (ec) {
+                    Logger::log(LogLevel::ERROR, "Błąd wysyłania: " + ec.message());
+                }
+            }
+        );
 }
 
 void tcp_connection::start_sending_time()

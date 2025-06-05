@@ -28,11 +28,20 @@ void tcp_server::handle_accept(tcp_connection::pointer new_connection,
 {
     if (!error) {
         //just in case call set_rgb_callback again -> check if this is needed
+        connections_.push_back(new_connection);
         new_connection->set_rgb_callback(rgb_callback);
         new_connection->start();
     }
 
     start_accept();
+}
+void tcp_server::broadcast(std::string& msg){
+     for (auto& conn : connections_) {
+            // put task to io_service to do it in asio 
+            io_service_.post([conn, msg](){
+                conn->sendMessage(msg);
+            });
+        }
 }
 // this function neeed to be call before start_accept();
 void tcp_server::set_rgb_callback(std::function<void(int,int,int)> callback)
