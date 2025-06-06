@@ -3,6 +3,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Text;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using DeskManagementStand_App.ViewModel;
@@ -20,6 +21,12 @@ namespace DeskManagementStand_App
             // Tworzysz instancję MainWindowViewModel
             var mainViewModel = new MainWindowViewModel();
             DataContext = mainViewModel; // Ustawiasz DataContext
+        }
+
+        private void Grid_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if(e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
     }
 

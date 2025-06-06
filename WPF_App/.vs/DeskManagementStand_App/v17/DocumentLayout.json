@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\",
+  "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\viewmodel\\connectioninfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:viewmodel\\connectioninfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\view\\usercontrols\\menubar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\menubar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\services\\messageparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:services\\messageparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|e:\\_projects\\desk_manager\\deskmanagementstand\\wpf_app\\services\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:services\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\view\\usercontrols\\connectioninfo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\connectioninfo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +26,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Logger.cs",
-              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\Logger.cs",
-              "RelativeDocumentMoniker": "Services\\Logger.cs",
-              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\Logger.cs",
-              "RelativeToolTip": "Services\\Logger.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T16:50:02.719Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MessageParser.cs",
-              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\MessageParser.cs",
-              "RelativeDocumentMoniker": "Services\\MessageParser.cs",
-              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\Services\\MessageParser.cs",
-              "RelativeToolTip": "Services\\MessageParser.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAswDkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T16:14:44.035Z",
+              "WhenOpened": "2025-06-06T07:26:37.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ConnectionInfoViewModel.cs",
-              "DocumentMoniker": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ConnectionInfoViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModel\\ConnectionInfoViewModel.cs",
-              "ToolTip": "E:\\_Projects\\Desk_Manager\\DeskManagementStand\\WPF_App\\ViewModel\\ConnectionInfoViewModel.cs",
-              "RelativeToolTip": "ViewModel\\ConnectionInfoViewModel.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAswHsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T14:36:25.001Z",
+              "Title": "MenuBar.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\MenuBar.xaml",
+              "RelativeDocumentMoniker": "View\\UserControls\\MenuBar.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\MenuBar.xaml",
+              "RelativeToolTip": "View\\UserControls\\MenuBar.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-06T07:21:13.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConnectionInfo.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\ConnectionInfo.xaml",
+              "RelativeDocumentMoniker": "View\\UserControls\\ConnectionInfo.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\ConnectionInfo.xaml",
+              "RelativeToolTip": "View\\UserControls\\ConnectionInfo.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-06T08:11:11.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-06T07:21:44.12Z",
               "EditorCaption": ""
             }
           ]

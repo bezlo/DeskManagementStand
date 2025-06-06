@@ -4,23 +4,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DeskManagementStand_App.View.UserControls"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" Background="#333333"
-             Height="30" d:DesignWidth="800">
+             Height="20" d:DesignWidth="800">
+    <!-- Definicja zasobów -->
+    <UserControl.Resources>
+        <!-- StaticResource elementsHeight = 20 -->
+        <sys:Double x:Key="elementsHeight">20</sys:Double>
+    </UserControl.Resources>
     
-    
-        <Menu>
-            <MenuItem Header="Home">
+        <DockPanel Height="{StaticResource elementsHeight}" Background="LightSlateGray" LastChildFill="False">
+
+        <Menu DockPanel.Dock="Left" Height="{StaticResource elementsHeight}" Width="120" Background="SlateGray">
+                <MenuItem Header="Home" Height="{StaticResource elementsHeight}">
                 <MenuItem Header="RGB settings"/>
                 <MenuItem Header="Power settings"/>
                 <MenuItem Header="Exit" Command="{Binding CloseAppCommand}"/>
             </MenuItem>
-            <MenuItem Header="Info">
+                <MenuItem Header="Info" Height="{StaticResource elementsHeight}">
             <MenuItem Header="Connection info" Command="{Binding OpenConnectionSettingsCommand}"/>
                 <MenuItem Header="About"/>
             </MenuItem>
-            <MenuItem Header="Help">
-                <MenuItem Header="About"/>
-            </MenuItem>
-        </Menu>
+                <MenuItem Header="Help" Height="{StaticResource elementsHeight}">
+                    <MenuItem Header="About"/>
+                </MenuItem>
+            </Menu>
+
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <Button Style="{StaticResource NormalButtonStyle}" Width="30" Height="{StaticResource elementsHeight}" Margin="0,0,10,0" />
+                <Button Style="{StaticResource DangerButtonStyle}" Width="30" Height="{StaticResource elementsHeight}" Margin="0,0,10,0" Command="{Binding CloseAppCommand}"/>
+            </StackPanel>
+        </DockPanel>
+        
     
 </UserControl>
