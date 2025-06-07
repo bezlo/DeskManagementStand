@@ -39,6 +39,13 @@
                     <DropShadowEffect BlurRadius="90" ShadowDepth="0" Color="{Binding SelectedColor}" Opacity="0.5"/>
                 </Image.Effect>
             </Image>
+            <Button x:Name="DeskButton" 
+                    Style="{StaticResource NormalButtonStyle}" 
+                    Content="OFF" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Bottom" 
+                    Width="100" Height="40"
+                    Command="{Binding SwitchOffLedsCommand}"/>
             <!-- Led Tape -->
             <!--
             <Viewbox HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="40" Width="300">

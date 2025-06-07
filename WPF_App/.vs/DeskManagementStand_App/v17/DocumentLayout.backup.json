@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\view\\usercontrols\\menubar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\menubar.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\viewmodel\\colorselectorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:viewmodel\\colorselectorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\viewmodel\\connectioninfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:viewmodel\\connectioninfoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\view\\usercontrols\\connectioninfo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\connectioninfo.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\view\\usercontrols\\colorselection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:view\\usercontrols\\colorselection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\styles\\buttons\\dangerbuttonstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:styles\\buttons\\dangerbuttonstyle.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|c:\\users\\sebastian\\desktop\\projekty\\deskmanagementstand\\wpf_app\\resources\\colors\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D031A8E5-59C1-46CF-85A6-4C9CFA818473}|DeskManagementStand_App.csproj|solutionrelative:resources\\colors\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,32 +38,69 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T07:26:37.571Z",
+              "DocumentIndex": 4,
+              "Title": "DangerButtonStyle.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\Styles\\Buttons\\DangerButtonStyle.xaml",
+              "RelativeDocumentMoniker": "Styles\\Buttons\\DangerButtonStyle.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\Styles\\Buttons\\DangerButtonStyle.xaml",
+              "RelativeToolTip": "Styles\\Buttons\\DangerButtonStyle.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-07T12:53:32.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MenuBar.xaml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\MenuBar.xaml",
-              "RelativeDocumentMoniker": "View\\UserControls\\MenuBar.xaml",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\MenuBar.xaml",
-              "RelativeToolTip": "View\\UserControls\\MenuBar.xaml",
+              "Title": "ColorSelectorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\ViewModel\\ColorSelectorViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ColorSelectorViewModel.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\ViewModel\\ColorSelectorViewModel.cs",
+              "RelativeToolTip": "ViewModel\\ColorSelectorViewModel.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAmwDMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T12:41:35.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Colors.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\Resources\\Colors\\Colors.xaml",
+              "RelativeDocumentMoniker": "Resources\\Colors\\Colors.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\Resources\\Colors\\Colors.xaml",
+              "RelativeToolTip": "Resources\\Colors\\Colors.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-06T07:21:13.171Z",
+              "WhenOpened": "2025-06-07T12:53:59.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConnectionInfoViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\ViewModel\\ConnectionInfoViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ConnectionInfoViewModel.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\ViewModel\\ConnectionInfoViewModel.cs",
+              "RelativeToolTip": "ViewModel\\ConnectionInfoViewModel.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAcwDgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T12:41:07.212Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "ColorSelection.xaml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\ColorSelection.xaml",
+              "RelativeDocumentMoniker": "View\\UserControls\\ColorSelection.xaml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\ColorSelection.xaml",
+              "RelativeToolTip": "View\\UserControls\\ColorSelection.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-07T12:36:18.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ConnectionInfo.xaml",
               "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\View\\UserControls\\ConnectionInfo.xaml",
               "RelativeDocumentMoniker": "View\\UserControls\\ConnectionInfo.xaml",
@@ -63,18 +108,6 @@
               "RelativeToolTip": "View\\UserControls\\ConnectionInfo.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-06-06T08:11:11.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Projekty\\DeskManagementStand\\WPF_App\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-06T07:21:44.12Z",
               "EditorCaption": ""
             }
           ]

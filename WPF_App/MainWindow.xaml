@@ -15,7 +15,7 @@
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
-    <Grid MouseDown="Grid_MouseDown">
+    <Grid>
         <Grid.RowDefinitions>
             <!-- menu bar   _row 0 -->
             <RowDefinition Height="20"/>
@@ -53,8 +53,8 @@
         HorizontalAlignment="Stretch" VerticalAlignment="Center" Opacity="0.1"/>
         <Border Grid.Row="10" Background="Gray" CornerRadius="10" Height="2"
         HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
-        
-        <Grid Grid.Row="0">
+
+        <Grid Grid.Row="0" MouseDown="Grid_MouseDown">
             <!--Menu Bar User Controls-->
             <userControls:MenuBar/>
         </Grid>

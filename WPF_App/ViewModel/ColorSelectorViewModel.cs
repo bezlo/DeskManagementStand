@@ -2,8 +2,9 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using System.Windows.Media;
-
+using DeskManagementStand_App.MVVM;
 //namespace DeskManagementStand_App.ViewModel;
 // Klasa ViewModel dla ColorSelector
 // Zawiera logikę do konwersji kolorów i powiadamiania o zmianach
@@ -45,8 +46,13 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
         }
     }
     //public event Action<Color> ColorChanged;
+    public ICommand SwitchOffLedsCommand { get; }
 
-
+    public ColorSelectorViewModel()
+    {
+        SwitchOffLedsCommand = new RelayCommand(_ => SwitchOffLeds());
+    }
+    
 
 
 
@@ -54,8 +60,26 @@ public class ColorSelectorViewModel : INotifyPropertyChanged
     private Color _selectedColor;
 
     private Brush _selectedBrush;
-    
-    
+
+
+    private void SwitchOffLeds()
+    {
+        // Inicjalizacja domyślnego koloru
+        UInt32 initColor = 0xFF000000; //
+
+        byte a = (byte)(initColor >> 24);
+        byte r = (byte)(initColor >> 16);
+        byte g = (byte)(initColor >> 8);
+        byte b = (byte)(initColor >> 0);
+
+        SelectedColor = Color.FromArgb(a, r, g, b);
+        SelectedBrush = new SolidColorBrush(SelectedColor); // Ustaw pędzel na czarny
+
+        SelectedColor = Colors.Black; // Ustaw kolor na czarny
+        SelectedBrush = new SolidColorBrush(SelectedColor); // Ustaw pędzel na czarny
+
+
+    }
     public void SetColorFromAngle(double angleDegrees)
         {
             SelectedColor = HsvToRgb(angleDegrees, 1, 1);
