@@ -12,12 +12,12 @@ using namespace std::chrono_literals;
 tcp_connection::tcp_connection(boost::asio::io_service& io_service)
     : socket_(io_service) {}
 
-tcp_connection::pointer tcp_connection::create(boost::asio::io_service& io_service)
+tcp_connection::conn_pointer tcp_connection::create(boost::asio::io_service& io_service)
                                                //std::function<void(int,int,int)> rgbcallback)
 {
     //auto connPtr = std::shared_ptr<tcp_connection>( new tcp_connection(io_service) );
 
-    auto connectionPtr = pointer(new tcp_connection(io_service));
+    auto connectionPtr = conn_pointer(new tcp_connection(io_service));
     connectionPtr->setup_commands();
     //connectionPtr->set_rgb_callback(std::move(rgb_callback));
     return connectionPtr;
@@ -83,7 +83,7 @@ void tcp_connection::do_read()
         });
 }
 
-void tcp_connection::sendMessage(const std::string& msg)
+void tcp_connection::sendMessage(const std::string& msg) 
 {
     auto self = shared_from_this();
         boost::asio::async_write(

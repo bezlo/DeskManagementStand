@@ -11,57 +11,26 @@
 
 int main() {
     Logger::setLogFile("server.log");
-    //int RGB[3] = {0,0,0};
+    std::cout << ">>> Serwer startuje, nasluch na porcie 5000\n";
+
     try {
-        //create io_service and server TCP
         boost::asio::io_service io_service;
         tcp_server server(io_service);
-        // run network thread (asio loop)
-        std::thread asioThread([&](){
-            io_service.run();
-        });
-        
 
-     int i = 0; // atomic for sure data
-        std::thread sendsmth([&](){
-            while(true){
-                if(i >= 5){
-                    i=0;
-                }
-                std::string msg = std::to_string(i) + "\n";
-
-                //for all connections
-                server -> broadcast(msg);
-                //for specific connections
-                /*
-                auto conns = server->getActiveConnections();
-                if(!conns.empty()){
-                    auto first_conn = conns.front();
-                    io_service.post([first_conn,msg]() {
-                        first_conn->sendMessage(msg);
-                    });
-                }
-                */
-                std::this_thread::sleep_for(std::chrono::seconds(3));
+        // 1) Musisz wstrzyknac callback ZANIM uruchomisz run()
+        /*StripRGB rgbstrip;
+        server.set_rgb_callback(
+            [&rgbstrip](int r, int g, int b) {
+                rgbstrip.setColor(r, g, b);
             }
-        })
-
-
-
-
-        RGBStrip strip;
-        
-        server.set_rgb_callback([&RGB, &strip](int r,int g,int b)
-        {std::cout <<"[CALLBACK]"<<" RGB:" << r <<","<<g<<","<<b<< std::endl;
-            RGB[0] = r;
-            RGB[1] = g;
-            RGB[2] = b;
-            strip.setColor(RGB[0],RGB[1],RGB[2]);
-        });
-        
+        );
+*/
+        // 2) Teraz uruchom serwer run() juz ma oczekujace accept-y
+        io_service.run();
     }
     catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
     return 0;
 }
+

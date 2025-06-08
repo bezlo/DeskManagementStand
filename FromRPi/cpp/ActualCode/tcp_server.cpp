@@ -8,12 +8,12 @@ tcp_server::tcp_server(boost::asio::io_service& io_service)
     : io_service_(io_service), acceptor_(io_service, tcp::endpoint(tcp::v4(), 5000))
 {
     //start_accept(); is commented cause set_rgb_callback need to be call first
-    //start_accept();
+    start_accept();
 }
 
 void tcp_server::start_accept()
 {   //tcp_connection::create call setup_commands(), where rgb_callback shouldnt be empty
-    tcp_connection::pointer new_connection = tcp_connection::create(io_service_);
+    tcp_connection::conn_pointer new_connection = tcp_connection::create(io_service_);
     //with first and every next connection we add right function
     new_connection->set_rgb_callback(rgb_callback);
     
@@ -23,7 +23,7 @@ void tcp_server::start_accept()
         });
 }
 
-void tcp_server::handle_accept(tcp_connection::pointer new_connection,
+void tcp_server::handle_accept(tcp_connection::conn_pointer new_connection,
     const boost::system::error_code& error)
 {
     if (!error) {

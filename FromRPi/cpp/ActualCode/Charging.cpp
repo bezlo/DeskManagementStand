@@ -5,6 +5,7 @@
 #include <ctime>
 #include <string>
 
+int Charging::NoIterations = 0;
 
 Charging::Charging(){
 	std::srand(static_cast<unsigned>(std::time(nullptr)));
@@ -14,7 +15,6 @@ Charging::Charging(){
 void Charging::ReadHardwareData(){
 
 	//simulation
-	int NoIterations = 0;
 
 	if(NoIterations <= 10)
 	{

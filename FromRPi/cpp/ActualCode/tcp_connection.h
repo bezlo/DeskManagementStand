@@ -25,6 +25,8 @@ public:
     
     void set_rgb_callback(std::function<void(int,int,int)> callback);
     
+    void sendMessage(const std::string& msg);
+    
 private:
     tcp_connection(boost::asio::io_service& io_service);
 

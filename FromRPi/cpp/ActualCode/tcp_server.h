@@ -22,11 +22,11 @@ public:
         return connections_;
     }
     //broadcast for more connected device, like pC app and mobile app
-    void broadcast(const std::string& msg);
-    }
+    void broadcast(std::string& msg);
+    
 private:
     void start_accept();
-    void handle_accept(tcp_connection::pointer new_connection, const boost::system::error_code& error);
+    void handle_accept(tcp_connection::conn_pointer new_connection, const boost::system::error_code& error);
 
     boost::asio::io_service& io_service_;
     boost::asio::ip::tcp::acceptor acceptor_;
