@@ -4,9 +4,13 @@
 
 using boost::asio::ip::tcp;
 
-tcp_server::tcp_server(boost::asio::io_service& io_service)
-    : io_service_(io_service), acceptor_(io_service, tcp::endpoint(tcp::v4(), 5000))
+tcp_server::tcp_server(boost::asio::io_service& io_service, ThreadSafeQueue<RGBColor>* colorQueue)
+    : io_service_(io_service), acceptor_(io_service, tcp::endpoint(tcp::v4(), 5000)),
+    colorQueue_(colorQueue), running_(true)
 {
+    rgb_callback = [this](int r, int g, int b) {
+        colorQueue_->push(RGBColor{r,g,b});
+    };
     //start_accept(); is commented cause set_rgb_callback need to be call first
     start_accept();
 }
@@ -35,13 +39,23 @@ void tcp_server::handle_accept(tcp_connection::conn_pointer new_connection,
 
     start_accept();
 }
-void tcp_server::broadcast(std::string& msg){
+void tcp_server::broadcast(const std::string& msg){
      for (auto& conn : connections_) {
+         if(conn->socket().is_open()) {
             // put task to io_service to do it in asio 
-            io_service_.post([conn, msg](){
-                conn->sendMessage(msg);
-            });
+            io_service_.post([conn, msg](){ conn->sendMessage(msg); });
         }
+     }
+}
+void tcp_server::broadcast_device(const DeviceParameters& p){
+     std::ostringstream ss;
+     ss << "{\"name\":"       << p.DeviceName
+        << ",\"OnOff\":"      << p.OnOff
+        << ",\"Voltage\":"    << p.Voltage
+        << ",\"Current\":"    << p.Current
+        << ",\"Power\":"      << p.Power << "}\n";
+
+        broadcast(ss.str());
 }
 // this function neeed to be call before start_accept();
 void tcp_server::set_rgb_callback(std::function<void(int,int,int)> callback)

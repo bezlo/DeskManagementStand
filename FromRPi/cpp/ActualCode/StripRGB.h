@@ -5,6 +5,10 @@
 
 #include <ws2811.h>
 #include "IDataListener.h"
+#include <iostream>
+#include <atomic>
+#include "Data.h"
+#include "ThreadSafeQueue.h"
 
 constexpr int DEFAULT_TARGER_FREQ 	= WS2811_TARGET_FREQ;
 constexpr int DEFAULT_GPIO_PIN 		= 18; //GPIO18
@@ -16,7 +20,8 @@ constexpr int DEFAULT_LED_COUNT		= 3; //there will be more than one strip - thin
 class RGBStrip //: public IDataListener
 {
 	public:
-		RGBStrip(int target_freq = DEFAULT_TARGER_FREQ,
+		RGBStrip(ThreadSafeQueue<RGBColor>* queue,
+				 int target_freq = DEFAULT_TARGER_FREQ,
 				 int gpio_pin	 = DEFAULT_GPIO_PIN,
 				 int dma		 = DEFAULT_DMA,
 				 int strip_type  = DEFAULT_STRIP_TYPE,
@@ -30,7 +35,11 @@ class RGBStrip //: public IDataListener
 		
 		void setColor(int r, int g, int b);
 		void effectRainbow();
-
+		
+		// Metoda uruchamiana w watku: pobiera kolory z kolejki i ustawia je
+		void run();
+		// Zatrzymuje petle watku (wyrzucamy sentinel do kolejki, zeby przerwac pop())
+		void stop();
 	private:
 		int clear_on_exit = 0;
 		int ledCount_;
@@ -38,6 +47,8 @@ class RGBStrip //: public IDataListener
 		ws2811_t leds_string_;
 		
 		//string convertIntToHex(int val);
+		ThreadSafeQueue<RGBColor>* colorQueue_;
+		std::atomic<bool> running_;
 };
 
 

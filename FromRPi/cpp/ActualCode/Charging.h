@@ -1,22 +1,17 @@
 //Charging.h
 #ifndef CHARGING_H
 #define CHARGING_H
-#include <string>
 
+#include <string>
+#include <atomic>
+#include "Data.h"
+#include <memory>
+#include "ThreadSafeQueue.h"
 
 class Charging
 {
 	private:
-	
-	struct ChargingParameters
-	{
-		std::string DeviceName;
-		bool OnOff;
-		double Voltage;
-		double Current;
-		double Power;
-	};
-	
+		
 	ChargingParameters PhoneParameters;
 	ChargingParameters WatchParameters;
 	ChargingParameters HeadphonesParameters;
@@ -27,8 +22,14 @@ class Charging
 	
 	void initialize();
 	
+	ThreadSafeQueue<std::shared_ptr<DeviceParameters>>* dataQueue_;
+    std::atomic<bool> running_;
+    
 	public:
-	Charging();
+	// Konstruktor przyjmuje wskaznik do kolejki, do ktorej beda wrzucane dane
+    Charging(ThreadSafeQueue<std::shared_ptr<DeviceParameters>>* queue);
 	void ReadHardwareData();
+	void run();
+	void stop();
 };
 #endif

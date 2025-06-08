@@ -4,13 +4,31 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
+#include <atomic>
 
 int Charging::NoIterations = 0;
 
-Charging::Charging(){
+Charging::Charging(ThreadSafeQueue<std::shared_ptr<DeviceParameters>>* queue)
+		: dataQueue_(queue), running_(true)
+{
 	std::srand(static_cast<unsigned>(std::time(nullptr)));
 	initialize();
 }
+
+void Charging::run() {
+        while (running_) {
+            std::this_thread::sleep_for(std::chrono::seconds(5));
+            // Symulacja odczytu danych
+            auto params = std::make_shared<DeviceParameters>();
+            params->voltage = std::rand() % 100;  // przykladowa wartosc
+            params->current = std::rand() % 50;
+            dataQueue_->push(params);
+        }
+        // Po zakonczeniu watku wrzuc nullptr jako sentinel (koniec)
+        dataQueue_->push(nullptr);
+}
+
+void Charging::stop() { running_ = false; }
 
 void Charging::ReadHardwareData(){
 

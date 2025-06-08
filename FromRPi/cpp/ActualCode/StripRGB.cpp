@@ -9,13 +9,15 @@
 #include <sstream>
 #include <bitset>
 
-RGBStrip::RGBStrip(int target_freq,
+RGBStrip::RGBStrip(ThreadSafeQueue<RGBColor>* queue,
+				   int target_freq,
 				   int gpio_pin,
 				   int dma,
 				   int strip_type,
 				   int led_count)
 				   :
-				   ledCount_(led_count), initialiazed_(false)
+				   ledCount_(led_count), initialiazed_(false),
+				   colorQueue_(queue), running(true)
 {
 	// *** WAZNE: wyzeruj cala strukture przed przypisaniami ***
     std::memset(&leds_string_, 0, sizeof(leds_string_));
@@ -44,6 +46,21 @@ RGBStrip::~RGBStrip() {
         ws2811_fini(&leds_string_);
     }
 }
+
+void RGBStrip::run() {
+        while (running_) {
+            RGBColor color = colorQueue_->pop();
+            // Sentinelna wartosc (r < 0) sygnalizuje koniec dzialania watku
+            if (color.r < 0) break;
+            setColor(color.r, color.g, color.b);
+        }
+}
+
+void RGBStrip::stop() { 
+        running_ = false; 
+        colorQueue_->push(RGBColor{-1,0,0}); 
+}
+
 void RGBStrip::testRGB()
 {
 	// Ustaw kolory dla 3 diod
