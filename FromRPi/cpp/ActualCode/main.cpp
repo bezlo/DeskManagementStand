@@ -4,6 +4,7 @@
 #include "StripRGB.h"
 #include "Charging.h"
 #include "Data.h"
+#include "ThreadSafeQueue.h"
 
 #include <boost/asio.hpp>
 #include <iostream>
@@ -21,34 +22,32 @@ int main() {
         boost::asio::io_service io_service;
         
         ThreadSafeQueue<RGBColor> colorQueue;
-        ThreadSageQueue<std::shared_ptr<DeviceParameters>> deviceQueue;
+        ThreadSafeQueue<std::shared_ptr<ChargingParameters>> deviceQueue;
         
         RGBStrip rgbstrip(&colorQueue);
         Charging charging(&deviceQueue);
         tcp_server server(io_service, &colorQueue);
         
         std::thread t_asio([&]{ io_service.run();});
-        std::thread t_rgb([&RGBStrip::run, &rgbstrip);
+        std::thread t_rgb(&RGBStrip::run, &rgbstrip);
         std::thread t_charging(&Charging::run, &charging);
         std::thread t_deviceData([&server, &deviceQueue](){
             while (auto p = deviceQueue.pop()) {
                 server.broadcast_device(*p);
             }
         });
-        
-        
     std::cout<<"Nacisnij Enter, aby zakonczyc...";
     std::cin.get();
 
     // zakonczenie
     io_service.stop();
-    rgbStrip.stop();
+    rgbstrip.stop();
     charging.stop();
     colorQueue.push(RGBColor{-1,0,0});
 
     t_asio.join();
     t_rgb.join();
-    t_charge.join();
+    t_charging.join();
     t_deviceData.join();
     }
     catch (const std::exception& e) {

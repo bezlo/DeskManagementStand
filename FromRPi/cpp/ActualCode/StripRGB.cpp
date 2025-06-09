@@ -17,7 +17,7 @@ RGBStrip::RGBStrip(ThreadSafeQueue<RGBColor>* queue,
 				   int led_count)
 				   :
 				   ledCount_(led_count), initialiazed_(false),
-				   colorQueue_(queue), running(true)
+				   colorQueue_(queue), running_(true)
 {
 	// *** WAZNE: wyzeruj cala strukture przed przypisaniami ***
     std::memset(&leds_string_, 0, sizeof(leds_string_));

@@ -12,8 +12,4 @@ struct ChargingParameters
 // Struktura komendy RGB (przekazywana przez kolejke)
 struct RGBColor { int r, g, b; };
 
-// Przykladowe parametry urzadzenia (Charging)
-struct DeviceParameters {
-    int voltage;
-    int current;
-};
+

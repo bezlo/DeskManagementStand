@@ -1,12 +1,14 @@
+//tcp_server.h
 #pragma once
 
 #include "tcp_connection.h"
+#include "ThreadSafeQueue.h"
+#include "Data.h"
+
 #include <boost/asio.hpp>
 #include <functional>
 #include <vector>
-#include "tcp_connection.h"
-#include "ThreadSafeQueue.h"
-#include "Data.h"
+
 
 using RGB_Callback = std::function<void(int r, int g, int b)>;
 
@@ -27,7 +29,7 @@ public:
     // }
     //broadcast for more connected device, like pC app and mobile app
     void broadcast(const std::string& msg);
-    void broadcast_device(const DeviceParameters& params);
+    void broadcast_device(const ChargingParameters& params);
     void start_accept();
 private:
     
@@ -41,5 +43,5 @@ private:
     std::vector<tcp_connection::conn_pointer> connections_;
     std::mutex connectionsMutex;
     ThreadSafeQueue<RGBColor>* colorQueue_;
-    std::vector<conn_pointer> connections_;
+    int socketFd_;
 };

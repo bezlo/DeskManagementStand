@@ -1,4 +1,5 @@
 //tcp_connection.cpp
+
 #include "tcp_connection.h"
 
 #include <iostream>
@@ -6,60 +7,31 @@
 #include <chrono>
 #include <ctime>
 #include <functional>
-#include <atomic>
-#include <mutex>
 
 using namespace std::chrono_literals;
 
-tcp_connection::tcp_connection(boost::asio::io_service& io_service, int socketFd, ThreadSafeQueue<RGBColor>* queue)
-    : socket_(io_service), socketFd_(socketFd), colorQueue_(queue), connected_(true) {}
+tcp_connection::tcp_connection(boost::asio::io_service& io_service, ThreadSafeQueue<RGBColor>* queue)
+    : socket_(io_service), colorQueue_(queue), connected_(true) {}
 
-void tcp_connection::start() {
-        connThread_ = std::thread(&tcp_connection::readLoop, this);
-}
 // Wysyla dane do klienta (mutex zapobiega kolizji wielowatkowych)
 void tcp_connection::send(const std::string& data) {
         std::lock_guard<std::mutex> lock(sendMutex_);
         // Tutaj logika wysylania po socket'cie (np. send(socketFd_, ...))
         std::cout << "[tcp_connection] Wysylanie: " << data << std::endl;
 }
-void tcp_connection::readLoop() {
-        while (connected_) {
-            // --- Tu odbylby sie blokujacy odbior danych z socketu klienta ---
-            // Przyklad (pseudokod): pobranie linii tekstu "r g b"
-            std::string message;
-            // Uzywamy std::getline tylko jako symulacji wejscia
-            if (!std::getline(std::cin, message)) {
-                connected_ = false;
-                break;
-            }
-            if (message.empty()) continue;
-            if (message == "exit") {
-                // Klient konczy polaczenie
-                connected_ = false;
-                break;
-            }
-            std::istringstream iss(message);
-            int r, g, b;
-            if (iss >> r >> g >> b) {
-                // Wrzucamy komende koloru do kolejki RGBStrip
-                colorQueue_->push(RGBColor{r, g, b});
-            }
-        }
-        // Po wyjsciu z petli mozna zamknac socket
-    }
-tcp_connection::conn_pointer tcp_connection::create(boost::asio::io_service& io_service)
+
+tcp_connection::conn_pointer tcp_connection::create(boost::asio::io_service& io_service, ThreadSafeQueue<RGBColor>* queue)
                                                //std::function<void(int,int,int)> rgbcallback)
 {
     //auto connPtr = std::shared_ptr<tcp_connection>( new tcp_connection(io_service) );
 
-    auto connectionPtr = conn_pointer(new tcp_connection(io_service));
+    auto connectionPtr = conn_pointer(new tcp_connection(io_service, queue));
     connectionPtr->setup_commands();
     //connectionPtr->set_rgb_callback(std::move(rgb_callback));
     return connectionPtr;
 }
 
-tcp::socket& tcp_connection::socket() { return socket_; }
+boost::asio::ip::tcp::socket& tcp_connection::socket() { return socket_; }
 
 void tcp_connection::start()
 {

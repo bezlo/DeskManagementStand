@@ -3,12 +3,11 @@
 
 #include <cstdlib>
 #include <ctime>
-#include <string>
-#include <atomic>
+#include <thread>
 
 int Charging::NoIterations = 0;
 
-Charging::Charging(ThreadSafeQueue<std::shared_ptr<DeviceParameters>>* queue)
+Charging::Charging(ThreadSafeQueue<std::shared_ptr<ChargingParameters>>* queue)
 		: dataQueue_(queue), running_(true)
 {
 	std::srand(static_cast<unsigned>(std::time(nullptr)));
@@ -16,13 +15,22 @@ Charging::Charging(ThreadSafeQueue<std::shared_ptr<DeviceParameters>>* queue)
 }
 
 void Charging::run() {
+	
         while (running_) {
             std::this_thread::sleep_for(std::chrono::seconds(5));
             // Symulacja odczytu danych
-            auto params = std::make_shared<DeviceParameters>();
-            params->voltage = std::rand() % 100;  // przykladowa wartosc
-            params->current = std::rand() % 50;
-            dataQueue_->push(params);
+            //auto params = std::make_shared<ChargingParameters>();
+            //params->Voltage = std::rand() % 100;  // przykladowa wartosc
+            //params->Current = std::rand() % 50;
+            ReadHardwareData();
+            auto PhonePtr = std::make_shared<ChargingParameters>(PhoneParameters);
+            auto WatchPtr = std::make_shared<ChargingParameters>(WatchParameters);
+            auto EarphonesPtr = std::make_shared<ChargingParameters>(EarphonesParameters);
+            auto HeadphonesPtr = std::make_shared<ChargingParameters>(HeadphonesParameters);
+            dataQueue_->push(PhonePtr);
+            dataQueue_->push(WatchPtr);
+            dataQueue_->push(EarphonesPtr);
+            dataQueue_->push(HeadphonesPtr);
         }
         // Po zakonczeniu watku wrzuc nullptr jako sentinel (koniec)
         dataQueue_->push(nullptr);

@@ -1,12 +1,13 @@
+//tcp_server.cpp
+
 #include "tcp_server.h"
 
-#include <functional>
 
 using boost::asio::ip::tcp;
 
 tcp_server::tcp_server(boost::asio::io_service& io_service, ThreadSafeQueue<RGBColor>* colorQueue)
     : io_service_(io_service), acceptor_(io_service, tcp::endpoint(tcp::v4(), 5000)),
-    colorQueue_(colorQueue), running_(true)
+    colorQueue_(colorQueue)
 {
     rgb_callback = [this](int r, int g, int b) {
         colorQueue_->push(RGBColor{r,g,b});
@@ -17,7 +18,7 @@ tcp_server::tcp_server(boost::asio::io_service& io_service, ThreadSafeQueue<RGBC
 
 void tcp_server::start_accept()
 {   //tcp_connection::create call setup_commands(), where rgb_callback shouldnt be empty
-    tcp_connection::conn_pointer new_connection = tcp_connection::create(io_service_);
+    tcp_connection::conn_pointer new_connection = tcp_connection::create(io_service_, colorQueue_);
     //with first and every next connection we add right function
     new_connection->set_rgb_callback(rgb_callback);
     
@@ -47,14 +48,14 @@ void tcp_server::broadcast(const std::string& msg){
         }
      }
 }
-void tcp_server::broadcast_device(const DeviceParameters& p){
+void tcp_server::broadcast_device(const ChargingParameters& p){
      std::ostringstream ss;
-     ss << "{\"name\":"       << p.DeviceName
+     ss << "{\"name\":"      << p.DeviceName
         << ",\"OnOff\":"      << p.OnOff
         << ",\"Voltage\":"    << p.Voltage
         << ",\"Current\":"    << p.Current
         << ",\"Power\":"      << p.Power << "}\n";
-
+std::cout << "debug name:" << p.DeviceName << std::endl;
         broadcast(ss.str());
 }
 // this function neeed to be call before start_accept();
