@@ -1,7 +1,8 @@
 //tcp_server.cpp
 
 #include "tcp_server.h"
-
+#include <ostream>
+#include <iostream>
 
 using boost::asio::ip::tcp;
 
@@ -50,11 +51,12 @@ void tcp_server::broadcast(const std::string& msg){
 }
 void tcp_server::broadcast_device(const ChargingParameters& p){
      std::ostringstream ss;
-     ss << "{\"name\":"      << p.DeviceName
-        << ",\"OnOff\":"      << p.OnOff
-        << ",\"Voltage\":"    << p.Voltage
-        << ",\"Current\":"    << p.Current
-        << ",\"Power\":"      << p.Power << "}\n";
+     ss << "CMD_GET_DATA"   << ";"
+        << p.DeviceName     << ";"
+        << p.OnOff          << ";"
+        << p.Voltage        << ";"
+        << p.Current        << ";"
+        << p.Power          << ";";
 std::cout << "debug name:" << p.DeviceName << std::endl;
         broadcast(ss.str());
 }
