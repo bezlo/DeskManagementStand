@@ -56,11 +56,7 @@ void tcp_server::broadcast_device(const ChargingParameters& p){
         << p.OnOff          << ";"
         << p.Voltage        << ";"
         << p.Current        << ";"
-<<<<<<< HEAD
         << p.Power          << "\n";
-=======
-        << p.Power          << ";";
->>>>>>> origin/main
 std::cout << "debug name:" << p.DeviceName << std::endl;
         broadcast(ss.str());
 }
