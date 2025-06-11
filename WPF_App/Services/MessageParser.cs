@@ -65,22 +65,11 @@ namespace DeskManagementStand_App.Services
                 if (string.IsNullOrEmpty(message))
                 { throw new ArgumentException("Message cannot be null or empty"); }
 
-                string[] messageParts = message.Split(';');
-                if (messageParts.Length < 1)
-                {
-                    throw new ArgumentException("Message must contain at least a command");
-                }
+                string[] messagesArray = message.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
-                string Command = messageParts[0].Trim();
-
-                switch (Command)
+                for(int i = 0; i < messagesArray.Length; i++)
                 {
-                    case "CMD_GET_DATA":
-                        logger.Log(Logger.LogLevel.INFO, $"Parsing command: {Command}");
-                        ParseCMD_GET_DATA(messageParts);
-                        break;
-                    default:
-                        throw new NotSupportedException($"Command '{Command}' is not supported");
+                    processMessage(messagesArray[i].Trim());
                 }
             }
             catch (ArgumentException argEx)
@@ -97,9 +86,33 @@ namespace DeskManagementStand_App.Services
             }
         }
 
+        private void processMessage(string message)
+        {
+            Logger logger = new Logger();
+
+            string[] messageParts = message.Split(';');
+
+            if (messageParts.Length < 1)
+            {
+                throw new ArgumentException("Message must contain at least a command");
+            }
+
+            string Command = messageParts[0].Trim();
+
+            switch (Command)
+            {
+                case "CMD_GET_DATA":
+                    logger.Log(Logger.LogLevel.INFO, $"Parsing command: {Command}");
+                    ParseCMD_GET_DATA(messageParts);
+                    break;
+                default:
+                    throw new NotSupportedException($"Command '{Command}' is not supported");
+            }
+        }
+
         private void ParseCMD_GET_DATA(string[] messageParts)
         {
-            if (messageParts.Length < 5)
+            if (messageParts.Length < 6)
             { throw new ArgumentException("CMD_GET_DATA must contain at least 4 parameters"); }
 
             switch (messageParts[1].Trim())
@@ -126,9 +139,10 @@ namespace DeskManagementStand_App.Services
             return new DeviceData
             {
                 DeviceType = messageParts[1].Trim(),
-                Voltage = messageParts[2].Trim(),
-                Current = messageParts[3].Trim(),
-                Power = messageParts[4].Trim()
+                IsCharging = messageParts[2].Trim(),
+                Voltage = messageParts[3].Trim(),
+                Current = messageParts[4].Trim(),
+                Power = messageParts[5].Trim()
             };
         }
 
@@ -141,6 +155,7 @@ namespace DeskManagementStand_App.Services
             PhoneData = new DeviceData
             {
                 DeviceType = "PHONE",
+                IsCharging = "0", 
                 Voltage = "0",
                 Current = "0",
                 Power = "0"
@@ -148,6 +163,7 @@ namespace DeskManagementStand_App.Services
             WatchData = new DeviceData
             {
                 DeviceType = "WATCH",
+                IsCharging = "0",
                 Voltage = "0",
                 Current = "0",
                 Power = "0"
@@ -155,6 +171,7 @@ namespace DeskManagementStand_App.Services
             HeadPhonesData = new DeviceData
             {
                 DeviceType = "HEADPHONES",
+                IsCharging = "0",
                 Voltage = "0",
                 Current = "0",
                 Power = "0"
@@ -162,6 +179,7 @@ namespace DeskManagementStand_App.Services
             EarphonesData = new DeviceData
             {
                 DeviceType = "EARPHONES",
+                IsCharging = "0",
                 Voltage = "0",
                 Current = "0",
                 Power = "0"

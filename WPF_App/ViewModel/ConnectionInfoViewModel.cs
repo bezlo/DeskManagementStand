@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using System.Windows.Input;
 using DeskManagementStand_App.Helpers;
 using DeskManagementStand_App.MVVM;
@@ -10,7 +11,7 @@ using DeskManagementStand_App.Services;
 namespace DeskManagementStand_App.ViewModel;
 
 public partial class ConnectionInfoViewModel : INotifyPropertyChanged
-    {
+{
         private readonly ColorSelectorViewModel _colorSelectorViewModel;
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -25,6 +26,9 @@ public partial class ConnectionInfoViewModel : INotifyPropertyChanged
         //public string MessagesFromPiText => string.Join(Environment.NewLine, MessagesFromPi);
         public ICommand ConnectButtonCommand { get; }
         public ICommand DisconnectButtonCommand { get; }
+
+        private readonly ICloseable _closer;
+        public ICommand CloseWindowCommand { get; }
 
         private string _statusInfo = "Brak połączenia";
         public string StatusInfo
@@ -49,18 +53,17 @@ public partial class ConnectionInfoViewModel : INotifyPropertyChanged
             }
         }
 
-        public ConnectionInfoViewModel(ColorSelectorViewModel _colorViewModel)
+        public ConnectionInfoViewModel(ColorSelectorViewModel _colorViewModel, ICloseable closer)
         {
         _colorSelectorViewModel = _colorViewModel;
         // Initialize the TCP handler
         // void -> async task check it
         ConnectButtonCommand = new RelayCommand(_ => Connect());
-        //ConnectButtonCommand = new RelayCommand(async _ => await Connect());
-        //ConnectButtonCommand = new RelayCommand(_ => Task.Run(() => Connect()));
 
         DisconnectButtonCommand = new RelayCommand(_ => Disconnect());
-            // Initialize the ColorSynchronizationService with the TCP handler and a lambda to get the selected color value
-            _colorSyncService = new ColorSynchronizationService(() => _colorSelectorViewModel.SelectedColorValue);
+
+        // Initialize the ColorSynchronizationService with the TCP handler and a lambda to get the selected color value
+        _colorSyncService = new ColorSynchronizationService(() => _colorSelectorViewModel.SelectedColorValue);
             _colorSyncService.Start();
 
         _colorSyncService.ColorChanged += color =>
@@ -71,16 +74,17 @@ public partial class ConnectionInfoViewModel : INotifyPropertyChanged
             // to do read value of voltage, current , power
 
         };
-
-    }
+        _closer = closer;
+        CloseWindowCommand = new RelayCommand(_ => _closer.Close());
+        }
 
         protected void OnPropertyChanged([CallerMemberName] string name = null)
          {
              Debug.WriteLine($"Property changed: {name}");
              PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
          }
-    // async void was changed to async task, check it
-    private async void Connect()
+
+        private async void Connect()
     {
         //Task.Run(async () =>
         //{

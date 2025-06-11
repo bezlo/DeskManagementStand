@@ -36,6 +36,7 @@ int main() {
                 server.broadcast_device(*p);
             }
         });
+        
     std::cout<<"Nacisnij Enter, aby zakonczyc...";
     std::cin.get();
 

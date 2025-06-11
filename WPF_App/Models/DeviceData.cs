@@ -11,6 +11,12 @@ namespace DeskManagementStand_App.Models
             set { _deviceType = value; OnPropertyChanged(nameof(DeviceType)); }
         }
 
+        private string _isCharging;
+        public string IsCharging
+        {
+            get => _isCharging;
+            set { _isCharging = value; OnPropertyChanged(nameof(IsCharging)); }
+        }
         private string _voltage;
         public string Voltage
         {

@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <thread>
+#include <ostream>
+#include <iostream>
 
 int Charging::NoIterations = 0;
 
@@ -18,19 +20,25 @@ void Charging::run() {
 	
         while (running_) {
             std::this_thread::sleep_for(std::chrono::seconds(5));
-            // Symulacja odczytu danych
-            //auto params = std::make_shared<ChargingParameters>();
-            //params->Voltage = std::rand() % 100;  // przykladowa wartosc
-            //params->Current = std::rand() % 50;
+            
             ReadHardwareData();
-            auto PhonePtr = std::make_shared<ChargingParameters>(PhoneParameters);
-            auto WatchPtr = std::make_shared<ChargingParameters>(WatchParameters);
-            auto EarphonesPtr = std::make_shared<ChargingParameters>(EarphonesParameters);
-            auto HeadphonesPtr = std::make_shared<ChargingParameters>(HeadphonesParameters);
-            dataQueue_->push(PhonePtr);
-            dataQueue_->push(WatchPtr);
-            dataQueue_->push(EarphonesPtr);
-            dataQueue_->push(HeadphonesPtr);
+            for(int i = 0; i < 4; i++)
+            {
+			if(i==0){
+				auto PhonePtr = std::make_shared<ChargingParameters>(PhoneParameters);
+				dataQueue_->push(PhonePtr);
+			}else if(i==1){
+				auto WatchPtr = std::make_shared<ChargingParameters>(WatchParameters);
+				dataQueue_->push(WatchPtr);
+			} else if(i==2){
+				auto EarphonesPtr = std::make_shared<ChargingParameters>(EarphonesParameters);
+				dataQueue_->push(EarphonesPtr);
+            } else if(i==3){
+				auto HeadphonesPtr = std::make_shared<ChargingParameters>(HeadphonesParameters);
+				dataQueue_->push(HeadphonesPtr);
+			}
+            std::cout << "WTF" << std::endl;
+			}
         }
         // Po zakonczeniu watku wrzuc nullptr jako sentinel (koniec)
         dataQueue_->push(nullptr);
