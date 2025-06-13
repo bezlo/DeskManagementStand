@@ -14,7 +14,7 @@ MyProject/
 ├── Docs/              # Documentation - software - ideas - plans
 ├── FromRPi/           # Raspberry Pi Files, uploaded
 ├── Meetings_and_Ideas/# R&D
-├── WPF_App           /# .Net C# MVVM
+├── WPF_App/           # .Net C# MVVM
 ├── LICENSE
 └── README.md
 ```
