@@ -1,5 +1,5 @@
 ﻿using Windows.UI;
-
+using System.Diagnostics;
 
 namespace DeskManagementStand_App.Services
 {
@@ -25,6 +25,7 @@ namespace DeskManagementStand_App.Services
 
 
             Console.WriteLine(logTimeStamp);
+            Debug.WriteLine(logTimeStamp);
             switch (color_)
             {
                 case Color c when c == Color.FromArgb(255, 0, 255, 0): // green
@@ -45,8 +46,10 @@ namespace DeskManagementStand_App.Services
             }
 
             Console.WriteLine(levelString);
+            Debug.WriteLine(levelString);
             Console.ResetColor();
             Console.WriteLine(message);
+            Debug.WriteLine(message);
         }
         Color LevelToColor(LogLevel level)
         {
@@ -76,6 +79,6 @@ namespace DeskManagementStand_App.Services
         public void Info(string message) => Log(LogLevel.INFO, message);
         public void Warning(string message) => Log(LogLevel.WARNING, message);
         public void Error(string message) => Log(LogLevel.ERROR, message);
-        public void Debug(string message) => Log(LogLevel.DEBUG, message);
+        public void DebugLog(string message) => Log(LogLevel.DEBUG, message);
     }
 }
