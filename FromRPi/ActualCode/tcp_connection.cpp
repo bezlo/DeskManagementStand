@@ -55,10 +55,16 @@ void tcp_connection::setup_commands()
             
             int r = *args[0], g = *args[1], b = *args[2];
             
-            Logger::log(LogLevel::INFO, "RGB was set as: (" +
-                std::to_string(r) + ", " + std::to_string(g) + ", " + std::to_string(b) + ")");
-            if(rgb_callback) 
-            {rgb_callback(r,g,b);}
+            Logger::log(LogLevel::INFO, "RGB was set as: (r=" +
+                std::to_string(r) + ", g=" + std::to_string(g) + ", b=" + std::to_string(b) + ")");
+            //if(rgb_callback) 
+            //{rgb_callback(r,g,b);}
+            RGBColor rgbColor_;
+            rgbColor_.r = r;
+            rgbColor_.g = g;
+            rgbColor_.b = b;
+            colorQueue_->push(rgbColor_);
+            Logger::log(LogLevel::DEBUG, "colors pushed to queue");
         } else {
             Logger::log(LogLevel::WARNING, "Usage: CMD_SET_RGB,<r>,<g>,<b>");
         }

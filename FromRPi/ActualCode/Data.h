@@ -10,6 +10,11 @@ struct ChargingParameters
 	};
 	
 // Struktura komendy RGB (przekazywana przez kolejke)
-struct RGBColor { int r, g, b; };
+struct RGBColor 
+{ 
+	int r;
+	int g;
+	int b; 
+};
 
 

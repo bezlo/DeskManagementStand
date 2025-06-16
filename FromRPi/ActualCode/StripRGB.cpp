@@ -48,11 +48,18 @@ RGBStrip::~RGBStrip() {
 }
 
 void RGBStrip::run() {
+    //testRGB();
+     Logger::log(LogLevel::DEBUG, "StepInsideRun");
         while (running_) {
+	    Logger::log(LogLevel::DEBUG, "StepInWhileInsideRun");
             RGBColor color = colorQueue_->pop();
             // Sentinelna wartosc (r < 0) sygnalizuje koniec dzialania watku
+	    Logger::log(LogLevel::INFO, "run gets : (r=" +
+                std::to_string(color.r) + ", g=" + std::to_string(color.g) + ", b=" + std::to_string(color.b) + ")");
             if (color.r < 0) break;
             setColor(color.r, color.g, color.b);
+	    logger.log(LogLevel::DEBUG, "debug RGBStrip::run() r=" +
+                std::to_string(color.r) + ", g=" + std::to_string(color.g) + ", b=" + std::to_string(color.b) + ")");
         }
 }
 
@@ -70,7 +77,27 @@ void RGBStrip::testRGB()
 
     ws2811_render(&leds_string_); // Wyslij dane do LED
     sleep(5); // Swiec przez 5 sekund
+    
+    leds_string_.channel[0].leds[0] = 0x00200000; // Czerwona
+    leds_string_.channel[0].leds[1] = 0x00200000;
+    leds_string_.channel[0].leds[2] = 0x00200000;
 
+    ws2811_render(&leds_string_); // Wyslij dane do LED
+    sleep(5); // Swiec przez 5 sekund
+    
+    leds_string_.channel[0].leds[0] = 0x00002000; // Zielona; // Czerwona
+    leds_string_.channel[0].leds[1] = 0x00002000; // Zielona
+    leds_string_.channel[0].leds[2] = 0x00002000; // Zielona; // Niebieska
+
+    ws2811_render(&leds_string_); // Wyslij dane do LED
+    sleep(5); // Swiec przez 5 sekund
+    
+    leds_string_.channel[0].leds[0] = 0x00000020; // Niebieska;
+    leds_string_.channel[0].leds[1] = 0x00000020; // Niebieska;
+    leds_string_.channel[0].leds[2] = 0x00000020; // Niebieska
+
+    ws2811_render(&leds_string_); // Wyslij dane do LED
+    sleep(5); // Swiec przez 5 sekund
     // Wyczysc LEDy
     for (int i = 0; i < ledCount_; i++) {
         leds_string_.channel[0].leds[i] = 0;
@@ -85,9 +112,17 @@ void RGBStrip::testRGB()
 
 void RGBStrip::setColor(int r, int g, int b)
 {
+    Logger::log(LogLevel::DEBUG, "set color gets color:" + std::to_string(r) + "," + std::to_string(g) + "," + std::to_string(b));
     // 0xRRGGBB
-    uint32_t rgbColor = (r << 16) | (g << 8) | b;
-    
+    // it is 0xBBGGRR????
+    uint32_t rgbColor = (static_cast<uint32_t>(b) << 16)
+		      | (static_cast<uint32_t>(g) << 8)
+		      | (static_cast<uint32_t>(r));
+     // Formatowanie hex do logu:
+    std::ostringstream oss;
+    oss << std::hex << std::uppercase << std::setw(6) << std::setfill('0') << rgbColor;
+    Logger::log(LogLevel::DEBUG, std::string("Calculated 0xRRGGBB: 0x") + oss.str());
+     
     for (int i = 0; i < ledCount_; i++)
     {leds_string_.channel[0].leds[i] = rgbColor;}
     

@@ -10,6 +10,9 @@
 #include "Data.h"
 #include "ThreadSafeQueue.h"
 
+#include "Logger.h"
+
+
 constexpr int DEFAULT_TARGER_FREQ 	= WS2811_TARGET_FREQ;
 constexpr int DEFAULT_GPIO_PIN 		= 18; //GPIO18
 constexpr int DEFAULT_DMA			= 10; 
@@ -49,6 +52,7 @@ class RGBStrip //: public IDataListener
 		//string convertIntToHex(int val);
 		ThreadSafeQueue<RGBColor>* colorQueue_;
 		std::atomic<bool> running_;
+		Logger	logger;
 };
 
 

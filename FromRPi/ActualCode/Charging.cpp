@@ -37,7 +37,6 @@ void Charging::run() {
 				auto HeadphonesPtr = std::make_shared<ChargingParameters>(HeadphonesParameters);
 				dataQueue_->push(HeadphonesPtr);
 			}
-            std::cout << "WTF" << std::endl;
 			}
         }
         // Po zakonczeniu watku wrzuc nullptr jako sentinel (koniec)

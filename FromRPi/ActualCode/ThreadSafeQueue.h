@@ -4,7 +4,6 @@
 #include <condition_variable>
 #include <queue>
 
-// Szablon watkowo-bezpiecznej kolejki (ThreadSafeQueue)
 template<typename T>
 class ThreadSafeQueue {
 private:

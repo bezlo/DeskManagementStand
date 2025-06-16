@@ -57,7 +57,9 @@ void tcp_server::broadcast_device(const ChargingParameters& p){
         << p.Voltage        << ";"
         << p.Current        << ";"
         << p.Power          << "\n";
-std::cout << "debug name:" << p.DeviceName << std::endl;
+        
+        Logger::log(LogLevel::DEBUG, "broadcast device name:" + p.DeviceName);
+
         broadcast(ss.str());
 }
 // this function neeed to be call before start_accept();

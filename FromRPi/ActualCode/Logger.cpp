@@ -9,6 +9,7 @@ std::string Logger::levelToColor(LogLevel level) {
         case LogLevel::INFO: return "\033[32m";     // green
         case LogLevel::WARNING: return "\033[33m";  // yellow
         case LogLevel::ERROR: return "\033[31m";    // red
+	case LogLevel::DEBUG: return "\033[34m";    // blue
     }
     return "\033[0m";
 }
@@ -48,6 +49,7 @@ std::string Logger::log_level_to_string(LogLevel level) {
             case LogLevel::INFO: return "INFO";
             case LogLevel::WARNING: return "WARN";
             case LogLevel::ERROR: return "ERROR";
+	    case LogLevel::DEBUG: return "DEBUG";
             default: return "UNKNOWN";
         }
     }
